@@ -1,0 +1,7 @@
+memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
+conductor_intro,1,,Der Zugschaffner. Er sieht müde aus. ,,,Der Zugschaffner. Er sieht müde aus. ,,,,,,,,,,
+conductor_coffee,1,,,,,"„Haben Sie gesehen, warum der Thermobecher umgekippt ist?""","„Ich habe nichts bemerkt.""",,spilled_coffee,„Gehört der Thermobecher Ihnen?,"„Nein. Mir gehört der Becher nicht.""",,,"""Waum ist Alkohol im Kaffee?"""," „Junger Mann, ich trinke nicht während meiner Arbeitszeit.""",
+conductor_nochange,4,,,,,,,,,,,,,,,
+conductor_ticket,5,,,,,„Wissen Sie welchem Passagier dieses Ticket gehört?“,„Nein. Aber es ist noch nicht abgestempelt wurden. ,ticket_notstamped,,,,,,,,
+conductor_danger,6,childname_tommy,,,,"„Kennen Sie den Jungen im Zug der Tommy heißt.""",„Nein das sagt mir nichts. Aber ich denke so oft an meine Kinder.“,,,"„Sie haben Kinder?""","„Ja, aber sie sollen ihren Vater nicht traurig sehen.""",,,"„Wieso sind Sie traurig?""","„Ich hätte mehr Schlafen sollen, aber es ist schwer alleine mit den Kinder.""",
+conductor_end_hint,5,,,,,"„Wenn die Tür sich öffnet, bedeutet das Ende des Kreislaufs. Bist du bereit?“","„Ja, ich bin bereit.“",,end_scene,„Dann tritt hinaus ins Licht.“,„Der Zug beginnt von vorne zu fahren.“,loop_restart,,,,
