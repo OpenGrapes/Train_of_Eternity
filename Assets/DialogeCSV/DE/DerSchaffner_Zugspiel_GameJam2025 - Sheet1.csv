@@ -1,0 +1,10 @@
+memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
+conductor_intro,1,,Der Zugschaffner. Er sieht müde aus. ,,,,,,,,,,,,,
+conductor_crash,2,,,,first_train_crash,"„Hatten wir einen Unfall? Was ist passiert?""","„Unfall? Mir ist nicjts aufgefallen.""",,,,,,,,,
+conductor_coffee,3,,,,spilled_coffee,"„Haben Sie gesehen, warum der Thermobecher umgekippt ist?""","„Ich habe nichts bemerkt.""",,spilled_coffee,„Gehört der Thermobecher Ihnen?,"„Nein. Mir gehört der Becher nicht.""",,boozed_coffe," „Waum ist Alkohol im Kaffee?"""," „Junger Mann, ich trinke nicht während meiner Arbeitszeit.""",
+conductor_nochange,4,,,,,,,,,,,,,,,
+conductor_ticket,5,,,,ticket_name,„Wissen Sie welchem Passagier dieses Ticket gehört?“,„Nein. Aber es ist noch nicht abgestempelt wurden. ,ticket_not_stamped,,,,,,,,
+conductor_tommy,6,,,,childname_tommy,"„Kennen Sie den Jungen im Zug der Tommy heißt.""",„Nein das sagt mir nichts. Aber ich denke so oft an meine Kinder.“,conductor_has_children,conductor_has_children,"„Sie haben Kinder?""",...,,,,,
+conducter_accident,7,,,,accident_train,"„Gab es in diesem Zug mal einen Unfall?""","„Ja, den gab es. Es war schrecklich. Der Zug fuhr über einen Zugübergang, als ein Auto wie aus dem Nichts über die Gleise fuhr.""",,accident_train,"„Was ist dann passiert""","„Der Fahrer überlebte es nicht. Der Zugführer ist traumatisiert.""",accident_fatality,accident_fatality," „Wann ist der Unfall passiert?"""," „Das weiß ich nicht. Es kommt mir vor als wäre es schon unendlich lage her""",
+conductor__broken,8,,,,window_broken,"„Ist der Thermobecher gerade durch das Fenster geflogen? Haben Sie was gesehen?""","„Es war wirklich schrecklich als es passierte.""",,window_broken,"„Als er aus dem Fenster flog?""","„Es war nebelig an dem Morgen.""",,,,,
+conductor_thomasen,9,,,,thomasen_is_stranger,"„Wie hieß das Todesopfer vom Unfall?""","„Er war gerade erst Mitte 30. Er hieß: Thomasen Schmidt.""",fatality_is_thomasen,,,,,,,,

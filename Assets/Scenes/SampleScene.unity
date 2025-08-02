@@ -670,8 +670,8 @@ RectTransform:
   - {fileID: 815890064}
   - {fileID: 643848119}
   - {fileID: 192606789}
-  - {fileID: 903812138}
   - {fileID: 180589216}
+  - {fileID: 903812138}
   m_Father: {fileID: 2036888027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -817,6 +817,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111539380}
   m_CullTransparentMesh: 1
+--- !u!1 &115604818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115604820}
+  - component: {fileID: 115604819}
+  m_Layer: 0
+  m_Name: WagonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &115604819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115604818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbd0c65958dfbc40a3fcfd63ab474ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWagonNumber: 1
+  maxWagons: 5
+  wagonCanvases:
+  - {fileID: 1849592089}
+  - {fileID: 11169937}
+  - {fileID: 90132931}
+  - {fileID: 1454338850}
+  - {fileID: 2075697219}
+  transitionCanvas: {fileID: 551320066}
+  transitionDuration: 0.5
+  dialogManager: {fileID: 1158999298}
+  showDebugInfo: 1
+--- !u!4 &115604820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115604818}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 917.0306, y: 549.77075, z: 154.44016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176587709
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +960,7 @@ GameObject:
   - component: {fileID: 180589219}
   - component: {fileID: 180589218}
   - component: {fileID: 180589217}
+  - component: {fileID: 180589220}
   m_Layer: 5
   m_Name: Kaffeebecher_Fenster
   m_TagString: Untagged
@@ -989,6 +1046,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180589215}
   m_CullTransparentMesh: 1
+--- !u!114 &180589220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180589215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: coffecup_window
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &183446749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1148,7 @@ GameObject:
   - component: {fileID: 192606792}
   - component: {fileID: 192606791}
   - component: {fileID: 192606790}
+  - component: {fileID: 192606793}
   m_Layer: 5
   m_Name: Fenster_Gesicht
   m_TagString: Untagged
@@ -1161,6 +1234,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192606788}
   m_CullTransparentMesh: 1
+--- !u!114 &192606793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192606788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: window_face
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &349922418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,8 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcId: grandma
-  npcName: Alte Frau
+  npcId: stranger
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!114 &349922421
@@ -1264,6 +1351,7 @@ GameObject:
   - component: {fileID: 497558288}
   - component: {fileID: 497558290}
   - component: {fileID: 497558289}
+  - component: {fileID: 497558291}
   m_Layer: 5
   m_Name: "WagonT\xFCr"
   m_TagString: Untagged
@@ -1328,6 +1416,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497558287}
   m_CullTransparentMesh: 1
+--- !u!114 &497558291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497558287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugInfo: 1
 --- !u!1 &551320062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,7 +1447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &551320063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1517,6 +1618,7 @@ GameObject:
   - component: {fileID: 643848122}
   - component: {fileID: 643848121}
   - component: {fileID: 643848120}
+  - component: {fileID: 643848123}
   m_Layer: 5
   m_Name: Fenster_Regen
   m_TagString: Untagged
@@ -1602,6 +1704,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643848118}
   m_CullTransparentMesh: 1
+--- !u!114 &643848123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643848118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: window_rain
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &815890063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,6 +1730,7 @@ GameObject:
   - component: {fileID: 815890064}
   - component: {fileID: 815890066}
   - component: {fileID: 815890065}
+  - component: {fileID: 815890067}
   m_Layer: 5
   m_Name: "WagonT\xFCr"
   m_TagString: Untagged
@@ -1677,6 +1795,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815890063}
   m_CullTransparentMesh: 1
+--- !u!114 &815890067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815890063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugInfo: 1
 --- !u!1 &836876759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1952,8 @@ GameObject:
   - component: {fileID: 853842821}
   - component: {fileID: 853842823}
   - component: {fileID: 853842822}
+  - component: {fileID: 853842824}
+  - component: {fileID: 853842825}
   m_Layer: 5
   m_Name: "WagonT\xFCrSchwarz"
   m_TagString: Untagged
@@ -1885,6 +2018,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853842820}
   m_CullTransparentMesh: 1
+--- !u!114 &853842824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853842820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugInfo: 1
+--- !u!114 &853842825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853842820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: door_closed
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &872506458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,8 +2096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcId: grandma
-  npcName: Alte Frau
+  npcId: stranger
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!114 &872506461
@@ -1989,6 +2149,7 @@ GameObject:
   - component: {fileID: 903812141}
   - component: {fileID: 903812140}
   - component: {fileID: 903812139}
+  - component: {fileID: 903812142}
   m_Layer: 5
   m_Name: Fenster_Kaffeebecher
   m_TagString: Untagged
@@ -2074,6 +2235,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903812137}
   m_CullTransparentMesh: 1
+--- !u!114 &903812142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903812137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: coffecup_window
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &955458662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,8 +2433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcId: grandma
-  npcName: Alte Frau
+  npcId: conductor
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!114 &1014789176
@@ -2311,6 +2486,7 @@ GameObject:
   - component: {fileID: 1043403425}
   - component: {fileID: 1043403424}
   - component: {fileID: 1043403423}
+  - component: {fileID: 1043403426}
   m_Layer: 5
   m_Name: Kaffebecher_umgekippt
   m_TagString: Untagged
@@ -2396,6 +2572,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043403421}
   m_CullTransparentMesh: 1
+--- !u!114 &1043403426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043403421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: coffeecup_spilled
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1137772377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,6 +2598,7 @@ GameObject:
   - component: {fileID: 1137772378}
   - component: {fileID: 1137772380}
   - component: {fileID: 1137772379}
+  - component: {fileID: 1137772381}
   m_Layer: 5
   m_Name: "WagonT\xFCr"
   m_TagString: Untagged
@@ -2471,6 +2663,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137772377}
   m_CullTransparentMesh: 1
+--- !u!114 &1137772381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137772377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugInfo: 1
 --- !u!1 &1158999296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +2893,7 @@ GameObject:
   - component: {fileID: 1233919352}
   - component: {fileID: 1233919351}
   - component: {fileID: 1233919350}
+  - component: {fileID: 1233919353}
   m_Layer: 5
   m_Name: Spiegel_Gesicht
   m_TagString: Untagged
@@ -2773,6 +2979,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233919348}
   m_CullTransparentMesh: 1
+--- !u!114 &1233919353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233919348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: mirrow_face
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1351764505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,6 +3139,7 @@ GameObject:
   - component: {fileID: 1369139875}
   - component: {fileID: 1369139874}
   - component: {fileID: 1369139873}
+  - component: {fileID: 1369139876}
   m_Layer: 5
   m_Name: Kaffebecher
   m_TagString: Untagged
@@ -3003,6 +3225,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369139871}
   m_CullTransparentMesh: 1
+--- !u!114 &1369139876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369139871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: coffeecup
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1452378706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,8 +3648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcId: grandma
-  npcName: Alte Frau
+  npcId: mother
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!1 &1567700257
@@ -3426,6 +3662,7 @@ GameObject:
   - component: {fileID: 1567700258}
   - component: {fileID: 1567700260}
   - component: {fileID: 1567700259}
+  - component: {fileID: 1567700261}
   m_Layer: 5
   m_Name: "WagonT\xFCrSchwarzOffen"
   m_TagString: Untagged
@@ -3490,6 +3727,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567700257}
   m_CullTransparentMesh: 1
+--- !u!114 &1567700261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567700257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: door_open
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1640130941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,6 +3753,7 @@ GameObject:
   - component: {fileID: 1640130942}
   - component: {fileID: 1640130944}
   - component: {fileID: 1640130943}
+  - component: {fileID: 1640130945}
   m_Layer: 5
   m_Name: "WagonT\xFCr"
   m_TagString: Untagged
@@ -3565,6 +3818,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640130941}
   m_CullTransparentMesh: 1
+--- !u!114 &1640130945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640130941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugInfo: 1
 --- !u!1 &1652817019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,6 +3940,7 @@ GameObject:
   - component: {fileID: 1662817134}
   - component: {fileID: 1662817133}
   - component: {fileID: 1662817135}
+  - component: {fileID: 1662817136}
   m_Layer: 5
   m_Name: Spiegel_Kaputt
   m_TagString: Untagged
@@ -3759,6 +4026,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1662817136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662817131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: mirrow_broken
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1770278242
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +4133,7 @@ GameObject:
   - component: {fileID: 1838562427}
   - component: {fileID: 1838562426}
   - component: {fileID: 1838562425}
+  - component: {fileID: 1838562428}
   m_Layer: 5
   m_Name: Ticket_Leer
   m_TagString: Untagged
@@ -3936,6 +4219,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838562423}
   m_CullTransparentMesh: 1
+--- !u!114 &1838562428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838562423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: ticket_empty
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1839837392
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,6 +4722,7 @@ GameObject:
   - component: {fileID: 2028270702}
   - component: {fileID: 2028270701}
   - component: {fileID: 2028270700}
+  - component: {fileID: 2028270703}
   m_Layer: 5
   m_Name: Spiegel_Repariert
   m_TagString: Untagged
@@ -4509,6 +4808,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028270698}
   m_CullTransparentMesh: 1
+--- !u!114 &2028270703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028270698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: mirrow_fixed
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &2036888023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,12 +4917,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 551320063}
   - {fileID: 1849592086}
   - {fileID: 11169934}
   - {fileID: 90132928}
   - {fileID: 1454338847}
   - {fileID: 2075697216}
+  - {fileID: 551320063}
   - {fileID: 1770278243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4735,6 +5049,7 @@ GameObject:
   - component: {fileID: 2104079914}
   - component: {fileID: 2104079913}
   - component: {fileID: 2104079912}
+  - component: {fileID: 2104079915}
   m_Layer: 5
   m_Name: Ticket_Name
   m_TagString: Untagged
@@ -4820,6 +5135,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104079910}
   m_CullTransparentMesh: 1
+--- !u!114 &2104079915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104079910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: ticket_name
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &2106743534
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,8 +5200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcId: grandma
-  npcName: Alte Frau
+  npcId: child
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!114 &2106743537
@@ -4957,12 +5286,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLoopCount: 1
+  playerName: ???
   dialogCSVFiles:
-  - {fileID: 4900000, guid: 706f63372e76f2d4da3ef3ad693c5e91, type: 3}
+  - {fileID: 4900000, guid: 64db8feb61a262f4492d3566c42c2421, type: 3}
+  - {fileID: 4900000, guid: b3024de2e3502a143b4ab1574935c627, type: 3}
+  - {fileID: 4900000, guid: 73371cea61cdc2f44a70f78539d8c229, type: 3}
+  - {fileID: 4900000, guid: 0d9048762ef3933478814282ab8c1134, type: 3}
+  - {fileID: 4900000, guid: 6b750fd507b2e7043a544157cd3c09a5, type: 3}
+  - {fileID: 4900000, guid: e6587e674df91624e92a60bcd84ec95c, type: 3}
   npcs:
-  - npcId: grandma
-    npcName: Alte Frau
-    csvFileName: TestGrandma
+  - npcId: mother
+    npcName: Old Lady
+    csvFileIndex: 1
+  - npcId: conductor
+    npcName: Conductor
+    csvFileIndex: 2
+  - npcId: child
+    npcName: Little Child
+    csvFileIndex: 3
+  - npcId: stranger
+    npcName: Hollow Traveler
+    csvFileIndex: 4
+  items:
+  - itemId: mirrow_broken
+    csvFileIndex: 0
+  - itemId: coffeecup
+    csvFileIndex: 0
+  - itemId: ticket_empty
+    csvFileIndex: 0
+  - itemId: window_rain
+    csvFileIndex: 0
+  - itemId: door_closed
+    csvFileIndex: 0
+  - itemId: loop_intro
+    csvFileIndex: 0
+  - itemId: loop_two
+    csvFileIndex: 0
+  - itemId: coffeecup_spilled
+    csvFileIndex: 0
+  - itemId: ticket_name
+    csvFileIndex: 0
+  - itemId: window_face
+    csvFileIndex: 0
+  - itemId: coffecup_window
+    csvFileIndex: 0
+  - itemId: loop_last
+    csvFileIndex: 0
+  - itemId: mirrow_fixed
+    csvFileIndex: 0
+  - itemId: mirrow_face
+    csvFileIndex: 0
+  - itemId: door_open
+    csvFileIndex: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4972,3 +5347,4 @@ SceneRoots:
   - {fileID: 1220472928}
   - {fileID: 2127336742}
   - {fileID: 1158999297}
+  - {fileID: 115604820}

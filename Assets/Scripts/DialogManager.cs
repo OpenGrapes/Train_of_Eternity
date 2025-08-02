@@ -31,7 +31,8 @@ public class DialogManager : MonoBehaviour
     private List<DialogLine> currentDialog;
     private int dialogIndex = 0;
     private System.Action onDialogEnd;
-    private string currentSpeakerName; // Aktueller Sprecher für UI-Anzeige
+    private string currentSpeakerName; // Aktueller Sprecher für UI-Anzeige (Spieler)
+    private string currentNPCName; // Name des aktuellen NPCs für Choice-Antworten
     private bool waitingForPlayerClick = false; // Warten auf Spieler-Klick
     private bool showingChoiceAnswer = false; // Zeigt gerade Choice-Antwort an
 
@@ -137,6 +138,29 @@ public class DialogManager : MonoBehaviour
         }
     }
 
+    // Dialog starten mit Item-ID
+    public void StartDialogWithItem(string itemId, System.Action onEnd = null)
+    {
+        if (GameManager.Instance != null)
+        {
+            var dialogs = GameManager.Instance.GetDialogsForItem(itemId);
+            // itemName entfernt - Items brauchen keinen Namen als Sprecher
+            
+            if (dialogPanel == null)
+            {
+                Debug.LogError("DialogPanel ist NULL! Bitte im Inspector zuweisen.");
+                return;
+            }
+            
+            Debug.Log($"Starte Dialog mit Item-ID: {itemId}");
+            StartDialog(dialogs, itemId, onEnd); // itemId als Sprecher-Name verwenden
+        }
+        else
+        {
+            Debug.LogError("GameManager nicht verfügbar!");
+        }
+    }
+
     // Dialog starten mit CSV-Dateiname
     public void StartDialogWithCSV(string csvFileName, System.Action onEnd = null)
     {
@@ -181,7 +205,18 @@ public class DialogManager : MonoBehaviour
         
         HideAllChoiceButtons();
         currentDialog = dialog;
-        currentSpeakerName = speakerName;
+        currentNPCName = speakerName; // NPC-Name für Choice-Antworten speichern
+        
+        // Erste Dialog-Zeile ist immer ein Gedanke des Spielers - Name vom GameManager holen
+        if (dialog.Count > 0)
+        {
+            currentSpeakerName = GameManager.SafeGetPlayerName(); // Spieler-Name aus GameManager
+        }
+        else
+        {
+            currentSpeakerName = speakerName;
+        }
+        
         dialogIndex = 0;
         onDialogEnd = onEnd;
         
@@ -359,7 +394,7 @@ public class DialogManager : MonoBehaviour
         // Choice-Antwort anzeigen - aus der ursprünglichen CSV-Struktur
         if (!string.IsNullOrEmpty(choice.answerText))
         {
-            UpdateSpeakerName(currentSpeakerName);
+            UpdateSpeakerName(currentNPCName); // NPC-Name für Antworten verwenden
             ShowTextOnly(choice.answerText);
             
             showingChoiceAnswer = true;

@@ -1,27 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NPCInteractable : MonoBehaviour
+public class ItemInteractable : MonoBehaviour
 {
-    [Header("NPC Settings")]
-    public string npcId = "TestGrandma"; // NPC-ID aus dem GameManager
-    // npcName entfernt - wird vom GameManager geholt
+    [Header("Item Settings")]
+    public string itemId = "mirrow_broken"; // Item-ID aus dem GameManager (= memoryId aus CSV)
+    // itemName entfernt - Items brauchen keinen Namen als Sprecher
     
     [Header("References")]
     public DialogManager dialogManager; // Referenz zum DialogManager
     
     [Header("Debug")]
     public bool showDebugInfo = true; // Debug-Ausgaben anzeigen
-    
-    // Hilfsmethode: NPC-Name vom GameManager holen
-    private string GetNPCName()
-    {
-        if (GameManager.Instance != null)
-        {
-            return GameManager.Instance.GetNPCName(npcId);
-        }
-        return npcId; // Fallback falls GameManager nicht verfügbar
-    }
     
     private void Start()
     {
@@ -33,7 +23,7 @@ public class NPCInteractable : MonoBehaviour
         
         if (dialogManager == null)
         {
-            Debug.LogWarning($"DialogManager für NPC '{GetNPCName()}' nicht gefunden!");
+            Debug.LogWarning($"DialogManager für Item-ID '{itemId}' nicht gefunden!");
         }
         
         // Setup für UI-Button (Image auf Canvas)
@@ -41,7 +31,7 @@ public class NPCInteractable : MonoBehaviour
         
         if (showDebugInfo)
         {
-            Debug.Log($"NPC '{GetNPCName()}' (ID: {npcId}) bereit für UI-Interaktion");
+            Debug.Log($"Item-ID '{itemId}' bereit für UI-Interaktion");
         }
     }
     
@@ -54,7 +44,7 @@ public class NPCInteractable : MonoBehaviour
             button = gameObject.AddComponent<Button>();
             if (showDebugInfo)
             {
-                Debug.Log($"Button-Component zu Canvas-NPC '{GetNPCName()}' hinzugefügt");
+                Debug.Log($"Button-Component zu Item-ID '{itemId}' hinzugefügt");
             }
         }
         
@@ -75,9 +65,9 @@ public class NPCInteractable : MonoBehaviour
     {
         if (showDebugInfo)
         {
-            Debug.Log($"Canvas-NPC '{GetNPCName()}' wurde angeklickt!");
+            Debug.Log($"Item-ID '{itemId}' wurde angeklickt!");
         }
-        StartDialog();
+        StartItemDialog();
     }
     
     // Manuelle Interaktion (falls vom Code ausgelöst)
@@ -85,18 +75,18 @@ public class NPCInteractable : MonoBehaviour
     {
         if (showDebugInfo)
         {
-            Debug.Log($"'{GetNPCName()}' OnInteract() manuell aufgerufen");
+            Debug.Log($"Item-ID '{itemId}' OnInteract() manuell aufgerufen");
         }
-        StartDialog();
+        StartItemDialog();
     }
     
-    private void StartDialog()
+    private void StartItemDialog()
     {
         if (dialogManager != null)
         {
             if (showDebugInfo)
             {
-                Debug.Log($"Starte Dialog mit {GetNPCName()} (NPC-ID: {npcId})");
+                Debug.Log($"Starte Item-Dialog mit ID: {itemId}");
             }
             
             // Zusätzliche Debug-Checks
@@ -108,24 +98,24 @@ public class NPCInteractable : MonoBehaviour
             
             if (showDebugInfo)
             {
-                Debug.Log($"GameManager gefunden, starte Dialog mit NPC...");
+                Debug.Log($"GameManager gefunden, starte Dialog mit Item...");
             }
             
-            // Verwende StartDialogWithNPC statt StartDialogWithCSV
-            dialogManager.StartDialogWithNPC(npcId);
+            // Verwende StartDialogWithItem (neue Methode im DialogManager)
+            dialogManager.StartDialogWithItem(itemId); 
         }
         else
         {
-            Debug.LogError($"DialogManager nicht verfügbar für {GetNPCName()}!");
+            Debug.LogError($"DialogManager nicht verfügbar für Item-ID: {itemId}!");
         }
     }
     
-    // Prüfe ob dieser NPC Dialoge verfügbar hat
+    // Prüfe ob dieses Item verfügbare Dialoge hat
     public bool HasAvailableDialogs()
     {
         if (GameManager.Instance != null)
         {
-            var dialogs = GameManager.Instance.GetAllDialogsFromCSV(npcId);
+            var dialogs = GameManager.Instance.GetDialogsForItem(itemId);
             return dialogs.Count > 0;
         }
         return false;
