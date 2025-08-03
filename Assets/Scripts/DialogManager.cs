@@ -250,6 +250,9 @@ public class DialogManager : MonoBehaviour
             UpdateSpeakerName(currentSpeakerName);
             ShowTextOnly(newestStartDialog.text);
             
+            // Verarbeite addMemory vom Start-Dialog (nach Anzeige des Textes)
+            GameManager.SafeProcessDialogMemory(newestStartDialog);
+            
             waitingForPlayerClick = true;
             
             // WICHTIG: Überspringe alle anderen Start-Dialoge und gehe direkt zu Choices
@@ -275,6 +278,9 @@ public class DialogManager : MonoBehaviour
             Debug.Log($"Zeige Dialog-Text: '{currentLine.text}' von {currentSpeakerName}");
             UpdateSpeakerName(currentSpeakerName);
             ShowTextOnly(currentLine.text);
+            
+            // Verarbeite addMemory vom Dialog (nach Anzeige des Textes)
+            GameManager.SafeProcessDialogMemory(currentLine);
             
             waitingForPlayerClick = true;
             dialogIndex++;
@@ -375,25 +381,20 @@ public class DialogManager : MonoBehaviour
         // Choice als gewählt markieren - WICHTIG: In der ursprünglichen DialogLine!
         choice.wasChosen = true;
         
-        // Memory-Flags setzen - aus der ursprünglichen CSV-Struktur
-        if (choice.addMemory != null && choice.addMemory.Count > 0)
-        {
-            foreach (string memory in choice.addMemory)
-            {
-                if (GameManager.Instance != null && !string.IsNullOrEmpty(memory))
-                {
-                    GameManager.Instance.AddMemory(memory);
-                    Debug.Log($"Memory gesetzt: {memory} (von Choice {choiceRef.choiceIndex} aus Dialog-ID '{sourceDialog.memoryId}')");
-                }
-            }
-        }
+        // Memory-Flags setzen - verwende das neue erweiterte Memory-System
+        GameManager.SafeProcessChoiceMemory(choice);
         
-        // SOFORTIGES NACHRÜCKEN: Egal welche Position gewählt wurde, alle rücken nach
-        UpdateAndShiftChoicesInstantly();
+        // DEBUG: Zeige Choice-Details
+        Debug.Log($"=== CHOICE VERARBEITUNG ===");
+        Debug.Log($"Choice Text: '{choice.choiceText}'");
+        Debug.Log($"Answer Text: '{choice.answerText}'");
+        Debug.Log($"AddMemory: {(choice.addMemory != null ? string.Join(", ", choice.addMemory) : "KEINE")}");
+        Debug.Log($"Answer ist leer: {string.IsNullOrEmpty(choice.answerText)}");
         
         // Choice-Antwort anzeigen - aus der ursprünglichen CSV-Struktur
         if (!string.IsNullOrEmpty(choice.answerText))
         {
+            Debug.Log($"Zeige Choice-Antwort: '{choice.answerText}' von '{currentNPCName}'");
             UpdateSpeakerName(currentNPCName); // NPC-Name für Antworten verwenden
             ShowTextOnly(choice.answerText);
             
@@ -402,10 +403,14 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
+            Debug.LogWarning($"KEINE CHOICE-ANTWORT VERFÜGBAR für Choice: '{choice.choiceText}'");
             // Keine Antwort-Text - sofort neue Warteschlange anzeigen
             UpdateSpeakerName("???");
             RefreshAndShowAvailableChoices();
         }
+        
+        // WICHTIG: Nachrücken NACH der Antwort-Anzeige, nicht davor!
+        // UpdateAndShiftChoicesInstantly(); // ENTFERNT - wird nach der Antwort gemacht
     }
 
     // NEUE METHODE: Sofortiges Nachrücken und Auffüllen der Choice-Buttons
@@ -646,32 +651,14 @@ public class DialogManager : MonoBehaviour
     // Hilfsmethoden
     private bool IsDialogLineAvailable(DialogLine line)
     {
-        if (line.requiredMemory == null || line.requiredMemory.Count == 0) 
-            return true;
-        
-        foreach (var requirement in line.requiredMemory)
-        {
-            if (GameManager.Instance == null || !GameManager.Instance.HasMemory(requirement))
-            {
-                return false;
-            }
-        }
-        return true;
+        // Verwende die zentrale Logik vom GameManager für konsistente Prüfungen
+        return GameManager.SafeIsDialogLineAvailable(line);
     }
 
     private bool IsChoiceAvailable(DialogLine.ChoiceData choice)
     {
-        if (choice.requiredMemory == null || choice.requiredMemory.Count == 0) 
-            return true;
-        
-        foreach (var requirement in choice.requiredMemory)
-        {
-            if (GameManager.Instance == null || !GameManager.Instance.HasMemory(requirement))
-            {
-                return false;
-            }
-        }
-        return true;
+        // Verwende das neue erweiterte Memory-System vom GameManager
+        return GameManager.SafeAreChoiceRequirementsMet(choice);
     }
 
     private void ShowChoicesOrEnd()

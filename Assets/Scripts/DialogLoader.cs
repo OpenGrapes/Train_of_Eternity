@@ -31,8 +31,8 @@ public static class DialogLoader
                 
                 Debug.Log($"Verarbeite CSV-Zeile {lineNumber}: {row.Substring(0, Mathf.Min(100, row.Length))}...");
                 
-                // CSV-Zeile splitten - Ihre CSV verwendet Kommas
-                var cells = row.Split(',');
+                // Robuste CSV-Zeile splitten - berücksichtigt Anführungszeichen
+                var cells = ParseCSVLine(row);
                 
                 // Debug: Anzahl Spalten prüfen
                 Debug.Log($"CSV-Zeile hat {cells.Length} Spalten");
@@ -69,6 +69,47 @@ public static class DialogLoader
         
         Debug.Log($"DialogLoader: {dialogLines.Count} Dialoge aus {csvFile.name} geladen");
         return dialogLines;
+    }
+    
+    // Robuste CSV-Zeile Parser (berücksichtigt Anführungszeichen)
+    private static string[] ParseCSVLine(string line)
+    {
+        var result = new List<string>();
+        var current = "";
+        bool inQuotes = false;
+        
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+            
+            if (c == '"')
+            {
+                // Prüfe auf escaped quotes ("")
+                if (i + 1 < line.Length && line[i + 1] == '"')
+                {
+                    current += '"';
+                    i++; // Skip das nächste Anführungszeichen
+                }
+                else
+                {
+                    inQuotes = !inQuotes;
+                }
+            }
+            else if (c == ',' && !inQuotes)
+            {
+                result.Add(current.Trim());
+                current = "";
+            }
+            else
+            {
+                current += c;
+            }
+        }
+        
+        // Letztes Feld hinzufügen
+        result.Add(current.Trim());
+        
+        return result.ToArray();
     }
     
     // Sichere String-Extraktion aus Array
@@ -116,14 +157,22 @@ public static class DialogLoader
         //                choice2_requiredMemory(9), choice2(10), choice2_answer(11), choice2_addMemory(12)
         //                choice3_requiredMemory(13), choice3(14), choice3_answer(15), choice3_addMemory(16)
         
+        Debug.Log($"ParseChoices für Dialog '{line.memoryId}': CSV hat {cells.Length} Spalten");
+        
         for (int choiceNum = 1; choiceNum <= 3; choiceNum++)
         {
             int baseIndex = 1 + (choiceNum * 4); // 5, 9, 13
             
             // Prüfen ob genug Spalten vorhanden sind
-            if (baseIndex + 3 >= cells.Length) break;
+            if (baseIndex + 3 >= cells.Length) 
+            {
+                Debug.Log($"Choice {choiceNum}: Nicht genug Spalten (brauche {baseIndex + 3}, habe {cells.Length})");
+                break;
+            }
             
             string choiceText = GetSafeString(cells, baseIndex + 1); // choice1, choice2, choice3
+            
+            Debug.Log($"Choice {choiceNum} - Text: '{choiceText}' (Spalte {baseIndex + 1})");
             
             // Nur wenn choiceText vorhanden ist, Choice erstellen
             if (!string.IsNullOrWhiteSpace(choiceText))
@@ -134,9 +183,21 @@ public static class DialogLoader
                 choice.answerText = GetSafeString(cells, baseIndex + 2);                     // choice1_answer
                 choice.addMemory = ParseStringList(GetSafeString(cells, baseIndex + 3));     // choice1_addMemory
                 
+                Debug.Log($"Choice {choiceNum} erstellt:");
+                Debug.Log($"  RequiredMemory: '{GetSafeString(cells, baseIndex)}' (Spalte {baseIndex})");
+                Debug.Log($"  ChoiceText: '{choice.choiceText}' (Spalte {baseIndex + 1})");
+                Debug.Log($"  AnswerText: '{choice.answerText}' (Spalte {baseIndex + 2})");
+                Debug.Log($"  AddMemory: '{GetSafeString(cells, baseIndex + 3)}' (Spalte {baseIndex + 3})");
+                
                 line.choices.Add(choice);
-                Debug.Log($"Choice {choiceNum} geladen: '{choice.choiceText}'");
+                Debug.Log($"Choice {choiceNum} zu Dialog '{line.memoryId}' hinzugefügt");
+            }
+            else
+            {
+                Debug.Log($"Choice {choiceNum}: Kein Text vorhanden, überspringe");
             }
         }
+        
+        Debug.Log($"ParseChoices beendet: {line.choices.Count} Choices für Dialog '{line.memoryId}' erstellt");
     }
 }

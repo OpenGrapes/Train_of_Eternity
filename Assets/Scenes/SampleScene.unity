@@ -962,12 +962,12 @@ GameObject:
   - component: {fileID: 180589217}
   - component: {fileID: 180589220}
   m_Layer: 5
-  m_Name: Kaffeebecher_Fenster
+  m_Name: Window3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &180589216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180589215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: coffecup_window
+  itemId: window_coffeecup
   dialogManager: {fileID: 0}
   showDebugInfo: 1
 --- !u!1 &183446749
@@ -1150,12 +1150,12 @@ GameObject:
   - component: {fileID: 192606790}
   - component: {fileID: 192606793}
   m_Layer: 5
-  m_Name: Fenster_Gesicht
+  m_Name: Window2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &192606789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1203,7 +1203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192606788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1249,97 +1249,6 @@ MonoBehaviour:
   itemId: window_face
   dialogManager: {fileID: 0}
   showDebugInfo: 1
---- !u!1 &349922418
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 349922419}
-  - component: {fileID: 349922422}
-  - component: {fileID: 349922421}
-  - component: {fileID: 349922420}
-  m_Layer: 5
-  m_Name: DerFremde_Gesicht
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &349922419
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349922418}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5860102, y: 4.034228, z: 1.2198162}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1454338847}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 576, y: 136.13}
-  m_SizeDelta: {x: 56.281, y: 51.778}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &349922420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349922418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcId: stranger
-  dialogManager: {fileID: 1158999298}
-  showDebugInfo: 1
---- !u!114 &349922421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349922418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 6545411442466627967, guid: e37f92d2a8e1429459cf60fa4f3d69ea, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &349922422
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349922418}
-  m_CullTransparentMesh: 1
 --- !u!1 &497558287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,7 +1529,7 @@ GameObject:
   - component: {fileID: 643848120}
   - component: {fileID: 643848123}
   m_Layer: 5
-  m_Name: Fenster_Regen
+  m_Name: Window1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1952,10 +1861,10 @@ GameObject:
   - component: {fileID: 853842821}
   - component: {fileID: 853842823}
   - component: {fileID: 853842822}
-  - component: {fileID: 853842824}
   - component: {fileID: 853842825}
+  - component: {fileID: 853842824}
   m_Layer: 5
-  m_Name: "WagonT\xFCrSchwarz"
+  m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2025,7 +1934,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853842820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
   m_Name: 
@@ -2151,12 +2060,12 @@ GameObject:
   - component: {fileID: 903812139}
   - component: {fileID: 903812142}
   m_Layer: 5
-  m_Name: Fenster_Kaffeebecher
+  m_Name: Window4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &903812138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2204,7 +2113,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903812137}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2247,7 +2156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: coffecup_window
+  itemId: window_coffeecup
   dialogManager: {fileID: 0}
   showDebugInfo: 1
 --- !u!1 &955458662
@@ -2488,12 +2397,12 @@ GameObject:
   - component: {fileID: 1043403423}
   - component: {fileID: 1043403426}
   m_Layer: 5
-  m_Name: Kaffebecher_umgekippt
+  m_Name: Coffeecup2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1043403422
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2541,7 +2450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043403421}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2895,12 +2804,12 @@ GameObject:
   - component: {fileID: 1233919350}
   - component: {fileID: 1233919353}
   m_Layer: 5
-  m_Name: Spiegel_Gesicht
+  m_Name: Mirrow3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1233919349
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2948,7 +2857,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233919348}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3141,7 +3050,7 @@ GameObject:
   - component: {fileID: 1369139873}
   - component: {fileID: 1369139876}
   m_Layer: 5
-  m_Name: Kaffebecher
+  m_Name: Coffeecup1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3237,7 +3146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: coffeecup
+  itemId: coffeecup_sunflower
   dialogManager: {fileID: 0}
   showDebugInfo: 1
 --- !u!1 &1452378706
@@ -3411,7 +3320,6 @@ RectTransform:
   m_Children:
   - {fileID: 176587710}
   - {fileID: 872506459}
-  - {fileID: 349922419}
   - {fileID: 497558288}
   - {fileID: 1838562424}
   - {fileID: 2104079911}
@@ -3664,12 +3572,12 @@ GameObject:
   - component: {fileID: 1567700259}
   - component: {fileID: 1567700261}
   m_Layer: 5
-  m_Name: "WagonT\xFCrSchwarzOffen"
+  m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1567700258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3696,7 +3604,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567700257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3831,6 +3739,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showDebugInfo: 1
+--- !u!1 &1648885218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1648885219}
+  m_Layer: 0
+  m_Name: MemoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1648885219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648885218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 918.13495, y: 544.43726, z: 1127.0538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652817019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,7 +3836,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652817019}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3942,7 +3881,7 @@ GameObject:
   - component: {fileID: 1662817135}
   - component: {fileID: 1662817136}
   m_Layer: 5
-  m_Name: Spiegel_Kaputt
+  m_Name: Mirrow1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4135,7 +4074,7 @@ GameObject:
   - component: {fileID: 1838562425}
   - component: {fileID: 1838562428}
   m_Layer: 5
-  m_Name: Ticket_Leer
+  m_Name: Ticket1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4252,7 +4191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1839837393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4300,7 +4239,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839837392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4366,6 +4305,7 @@ RectTransform:
   - {fileID: 1562945621}
   - {fileID: 1640130942}
   - {fileID: 1662817132}
+  - {fileID: 1865348095}
   - {fileID: 2028270699}
   - {fileID: 1233919349}
   m_Father: {fileID: 2036888027}
@@ -4438,6 +4378,151 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1865348094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865348095}
+  - component: {fileID: 1865348099}
+  - component: {fileID: 1865348098}
+  - component: {fileID: 1865348097}
+  - component: {fileID: 1865348096}
+  - component: {fileID: 1865348101}
+  - component: {fileID: 1865348100}
+  m_Layer: 5
+  m_Name: LoopDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1865348095
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6849127, y: 1.8380866, z: 1.4450366}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1849592086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 848, y: -375}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1865348096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: loop_intro
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
+--- !u!65 &1865348097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1865348098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -6715476983230785450, guid: 88e1034afe100c64dbef94c2d0eacac9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1865348099
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_CullTransparentMesh: 1
+--- !u!114 &1865348100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: loop_last
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
+--- !u!114 &1865348101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865348094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: loop_two
+  dialogManager: {fileID: 0}
+  showDebugInfo: 1
 --- !u!1 &1902346311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4724,12 +4809,12 @@ GameObject:
   - component: {fileID: 2028270700}
   - component: {fileID: 2028270703}
   m_Layer: 5
-  m_Name: Spiegel_Repariert
+  m_Name: Mirrow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2028270699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4777,7 +4862,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028270698}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5051,12 +5136,12 @@ GameObject:
   - component: {fileID: 2104079912}
   - component: {fileID: 2104079915}
   m_Layer: 5
-  m_Name: Ticket_Name
+  m_Name: Ticket2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2104079911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5104,7 +5189,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104079910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5251,6 +5336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127336742}
   - component: {fileID: 2127336743}
+  - component: {fileID: 2127336744}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5310,7 +5396,7 @@ MonoBehaviour:
   items:
   - itemId: mirrow_broken
     csvFileIndex: 0
-  - itemId: coffeecup
+  - itemId: coffeecup_sunflower
     csvFileIndex: 0
   - itemId: ticket_empty
     csvFileIndex: 0
@@ -5338,6 +5424,23 @@ MonoBehaviour:
     csvFileIndex: 0
   - itemId: door_open
     csvFileIndex: 0
+--- !u!114 &2127336744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127336741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd339d92ac465a243b148c65ead51889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugLogs: 1
+  itemId: 
+  onDialogCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5348,3 +5451,4 @@ SceneRoots:
   - {fileID: 2127336742}
   - {fileID: 1158999297}
   - {fileID: 115604820}
+  - {fileID: 1648885219}

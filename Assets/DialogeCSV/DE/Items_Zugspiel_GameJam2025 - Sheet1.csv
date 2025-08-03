@@ -1,16 +1,16 @@
 memoryId,minLoop,requiredMemory,text,addMemory
 mirrow_broken,1,,Ein zerbrochener Spiegel. Man kann nichts darin erkennen. ,
-coffeecup,1,,Ein  offener Thermo becher mit gelben Sonnenblumen drauf. Es riecht nach Kaffee und dampf steigt heraus. Der Kaffee scheint noch heiß zu sein. ,coffee_hot
+coffeecup_sunflower,1,,Ein  offener Thermo becher mit gelben Sonnenblumen drauf. Dampf steigt heraus. Der Kaffee scheint noch heiß zu sein.. ,coffee_hot
 ticket_empty,1,,Ein leeres Zugticket. ,
-window_rain,1,,Ein Fenster. Es regenet draußen. ,window_rain
+window_rain,1,,Ein Fenster. Es regenet draußen. ,
 door_closed,1,,Eine Tür. Sie ist verschlossen.,
 loop_intro,2,,Was ist passiert? Hatte der Zug einen Unfall?,first_train_crash
-loop_two,3,,Ich bin schon wieder hier gelandet. Wie seltsam.,
-coffeecup_spilled,3,coffee_hot,Der Thermobecher ist umgekippt. Der Inhalt riecht nach einer Mischung aus Kaffee und Amaretto. ,boozed_coffee
+loop_two,3,,Ich bin schon wieder hier gelandet. Wie seltsam.,spilled_coffee
+coffeecup_spilled,3,,Der Thermobecher ist umgekippt. Der Inhalt riecht nach einer Mischung aus Kaffee und Amaretto. ,boozed_coffee
 ticket_name,4,spilled_coffee,Auf dem Ticket steht: Thomasen Schmidt.,ticket_name
 window_face,6,,Was war das für ein Gesicht? Wo kam es her?,window_face_reveal
-coffecup_window,8,,Ist der Thermobecher gerade aus dem Fenster geflogen?,window_broken
-loop_last,9,,Jetzt verstehe ich. Thomasen starb in einem Zugunglück. Weil er nach dem Thermobecher griff. ,all_memorys_collected
-mirrow_fixed,10,all_memorys_collected,Der Spiegel ist wieder heile. Wie ist das möglich?,
+window_coffeecup,8,,Ist der Thermobecher gerade aus dem Fenster geflogen?,window_broken
+loop_last,9,,Jetzt verstehe ich. Thomasen starb in einem Zugunglück. Weil er nach dem Thermobecher griff. ,
+mirrow_fixed,10,fixed_mirrow,Der Spiegel ist wieder heile. Wie ist das möglich?,all_memorys_collected
 mirrow_face,10,all_memorys_collected,"Das Gesicht des Fremnden im Spiegel. Warte nein es ist mein Gesicht. Ich bin Thomasen Schmidt. Ich starb, weil ich nach dem Thermobecher griff. Ich war tod. Ich war es die ganze Zeit schon. Ich konnte mich nur nicht daran erinnern. Oder wollte es nicht mehr. ",i_am_thomasen
 door_open,10,i_am_thomasen,Jetzt bin bereit. Ich kann jetzt loslassen. ,

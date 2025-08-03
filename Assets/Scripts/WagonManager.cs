@@ -63,8 +63,71 @@ public class WagonManager : MonoBehaviour
             Debug.LogError("WagonManager: Keine Wagon-Canvases zugewiesen!");
             return;
         }
-        
+
         // Alle Wagon-Canvases deaktivieren
+        for (int i = 0; i < wagonCanvases.Length; i++)
+        {
+            if (wagonCanvases[i] != null)
+            {
+                wagonCanvases[i].gameObject.SetActive(false);
+            }
+        }
+
+        // Übergangs-Canvas deaktivieren
+        if (transitionCanvas != null)
+        {
+            transitionCanvas.gameObject.SetActive(false);
+        }
+
+        // Ersten Wagon aktivieren
+        if (wagonCanvases.Length > 0 && wagonCanvases[0] != null)
+        {
+            wagonCanvases[0].gameObject.SetActive(true);
+            currentWagonNumber = 1;
+
+            if (showDebugInfo)
+            {
+                Debug.Log($"WagonManager: Wagon {currentWagonNumber} aktiviert");
+            }
+        }
+    }
+    
+    // Aktiviere alle Wagon-Canvases temporär für Cache-Erstellung
+    public void ActivateAllCanvasesForCaching()
+    {
+        if (showDebugInfo)
+        {
+            Debug.Log("WagonManager: Aktiviere alle Canvases temporär für Item-Cache");
+        }
+        
+        for (int i = 0; i < wagonCanvases.Length; i++)
+        {
+            if (wagonCanvases[i] != null)
+            {
+                wagonCanvases[i].gameObject.SetActive(true);
+                if (showDebugInfo)
+                {
+                    Debug.Log($"WagonManager: Canvas {i + 1} aktiviert für Caching");
+                }
+            }
+        }
+        
+        // Übergangs-Canvas auch aktivieren falls Items darauf sind
+        if (transitionCanvas != null)
+        {
+            transitionCanvas.gameObject.SetActive(true);
+        }
+    }
+    
+    // Stelle normale Wagon-Canvas Konfiguration wieder her
+    public void RestoreNormalCanvasState()
+    {
+        if (showDebugInfo)
+        {
+            Debug.Log("WagonManager: Stelle normale Canvas-Konfiguration wieder her");
+        }
+        
+        // Alle Canvases deaktivieren
         for (int i = 0; i < wagonCanvases.Length; i++)
         {
             if (wagonCanvases[i] != null)
@@ -79,20 +142,20 @@ public class WagonManager : MonoBehaviour
             transitionCanvas.gameObject.SetActive(false);
         }
         
-        // Ersten Wagon aktivieren
-        if (wagonCanvases.Length > 0 && wagonCanvases[0] != null)
+        // Aktuellen Wagon wieder aktivieren
+        if (currentWagonNumber > 0 && currentWagonNumber <= wagonCanvases.Length)
         {
-            wagonCanvases[0].gameObject.SetActive(true);
-            currentWagonNumber = 1;
-            
-            if (showDebugInfo)
+            int wagonIndex = currentWagonNumber - 1;
+            if (wagonCanvases[wagonIndex] != null)
             {
-                Debug.Log($"WagonManager: Wagon {currentWagonNumber} aktiviert");
+                wagonCanvases[wagonIndex].gameObject.SetActive(true);
+                if (showDebugInfo)
+                {
+                    Debug.Log($"WagonManager: Wagon {currentWagonNumber} wieder aktiviert nach Caching");
+                }
             }
         }
-    }
-    
-    // Von WagonDoor aufgerufen - zum nächsten Wagon (mit Loop)
+    }    // Von WagonDoor aufgerufen - zum nächsten Wagon (mit Loop)
     public void GoToNextWagon()
     {
         if (isTransitioning)
@@ -214,36 +277,11 @@ public class WagonManager : MonoBehaviour
             }
         }
         
-        // 2. AKTUELLEN WAGON DEAKTIVIEREN
-        int currentIndex = currentWagonNumber - 1; // Array ist 0-basiert
-        if (currentIndex >= 0 && currentIndex < wagonCanvases.Length && wagonCanvases[currentIndex] != null)
-        {
-            wagonCanvases[currentIndex].gameObject.SetActive(false);
-            if (showDebugInfo)
-            {
-                Debug.Log($"Wagon {currentWagonNumber} Canvas deaktiviert");
-            }
-        }
-        
-        // 3. WARTEN (Übergangszeit)
-        if (showDebugInfo)
-        {
-            Debug.Log($"Warte {transitionDuration} Sekunden...");
-        }
-        yield return new WaitForSeconds(transitionDuration);
-        
-        // 4. NEUEN WAGON AKTIVIEREN
+        // 2. NEUEN WAGON AKTIVIEREN (sofort nach Canvas-Aktivierung)
         int targetIndex = targetWagon - 1; // Array ist 0-basiert
         if (targetIndex >= 0 && targetIndex < wagonCanvases.Length && wagonCanvases[targetIndex] != null)
         {
-            // LOOP-ZÄHLUNG: Von Wagon 5 zurück zu Wagon 1 = ein Loop abgeschlossen
-            if (currentWagonNumber == maxWagons && targetWagon == 1)
-            {
-                OnLoopCompleted();
-            }
-            
             wagonCanvases[targetIndex].gameObject.SetActive(true);
-            currentWagonNumber = targetWagon;
             if (showDebugInfo)
             {
                 Debug.Log($"Wagon {targetWagon} Canvas aktiviert");
@@ -254,13 +292,47 @@ public class WagonManager : MonoBehaviour
             Debug.LogError($"WagonManager: Kann Wagon {targetWagon} nicht aktivieren - Canvas nicht gefunden!");
         }
         
-        // 5. ÜBERGANGS-CANVAS DEAKTIVIEREN
+        // 3. ALTEN WAGON DEAKTIVIEREN (nach Aktivierung des neuen)
+        int currentIndex = currentWagonNumber - 1; // Array ist 0-basiert
+        if (currentIndex >= 0 && currentIndex < wagonCanvases.Length && wagonCanvases[currentIndex] != null)
+        {
+            wagonCanvases[currentIndex].gameObject.SetActive(false);
+            if (showDebugInfo)
+            {
+                Debug.Log($"Wagon {currentWagonNumber} Canvas deaktiviert");
+            }
+        }
+        
+        // LOOP-ZÄHLUNG: Von Wagon 5 zurück zu Wagon 1 = ein Loop abgeschlossen
+        if (currentWagonNumber == maxWagons && targetWagon == 1)
+        {
+            OnLoopCompleted();
+        }
+        
+        // Wagon-Nummer aktualisieren
+        currentWagonNumber = targetWagon;
+        
+        // 4. WECHSEL COMPLETE EVENT (Items werden getauscht)
+        OnTransitionComplete(targetWagon);
+        if (showDebugInfo)
+        {
+            Debug.Log("Complete Event ausgelöst - Items werden getauscht");
+        }
+        
+        // 5. TIMER STARTEN (NACH Complete Event und Item-Tausch)
+        if (showDebugInfo)
+        {
+            Debug.Log($"Warte {transitionDuration} Sekunden NACH Item-Tausch...");
+        }
+        yield return new WaitForSeconds(transitionDuration);
+        
+        // 6. ÜBERGANGS-CANVAS DEAKTIVIEREN (nach Timer-Ablauf)
         if (transitionCanvas != null)
         {
             transitionCanvas.gameObject.SetActive(false);
             if (showDebugInfo)
             {
-                Debug.Log("Übergangs-Canvas deaktiviert");
+                Debug.Log("Übergangs-Canvas deaktiviert - Timer abgelaufen");
             }
         }
         
@@ -356,6 +428,36 @@ public class WagonManager : MonoBehaviour
         else
         {
             Debug.LogWarning("WagonManager: GameManager nicht gefunden - kann Loop nicht validieren!");
+        }
+    }
+    
+    // Wird aufgerufen wenn der Wagon-Wechsel complete ist
+    private void OnTransitionComplete(int newWagon)
+    {
+        if (showDebugInfo)
+        {
+            Debug.Log($"=== TRANSITION COMPLETE: Wechsel zu Wagon {newWagon} abgeschlossen ===");
+        }
+        
+        // Event für andere Scripts auslösen
+        TriggerTransitionCompleteEvent(newWagon);
+        
+        // Hier können weitere Scripts benachrichtigt werden
+        // TODO: Event-System für andere Scripts die auf Transition Complete reagieren sollen
+        
+        // Beispiel: ItemDialogTrigger könnte hier benachrichtigt werden
+        // dass der Wechsel complete ist und Item-Evolution geprüft werden kann
+    }
+    
+    // Öffentliche Methode für andere Scripts um auf Transition Complete zu reagieren
+    public System.Action<int> OnTransitionCompleted;
+    
+    // Event auslösen für externe Scripts
+    private void TriggerTransitionCompleteEvent(int newWagon)
+    {
+        if (OnTransitionCompleted != null)
+        {
+            OnTransitionCompleted.Invoke(newWagon);
         }
     }
 }

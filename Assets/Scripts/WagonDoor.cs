@@ -11,6 +11,19 @@ public class WagonDoor : MonoBehaviour
     
     private void Start()
     {
+        FindWagonManager();
+        
+        // Setup für UI-Button (Image auf Canvas) - WICHTIG!
+        SetupUIButton();
+        
+        if (showDebugInfo)
+        {
+            Debug.Log($"WagonDoor '{gameObject.name}' bereit für UI-Interaktion");
+        }
+    }
+    
+    private void FindWagonManager()
+    {
         // WagonManager-GameObject finden
         wagonManagerObject = GameObject.Find("WagonManager");
         if (wagonManagerObject == null)
@@ -31,14 +44,6 @@ public class WagonDoor : MonoBehaviour
         {
             Debug.LogError("WagonDoor: Kein WagonManager GameObject gefunden! Bitte WagonManager in der Szene platzieren.");
             return;
-        }
-        
-        // Setup für UI-Button (Image auf Canvas) - WICHTIG!
-        SetupUIButton();
-        
-        if (showDebugInfo)
-        {
-            Debug.Log($"WagonDoor '{gameObject.name}' bereit für UI-Interaktion");
         }
     }
     
@@ -76,6 +81,12 @@ public class WagonDoor : MonoBehaviour
         if (showDebugInfo)
         {
             Debug.Log($"WagonDoor '{gameObject.name}' wurde angeklickt!");
+        }
+        
+        // Falls WagonManager noch nicht gefunden wurde, erneut suchen
+        if (wagonManagerObject == null)
+        {
+            FindWagonManager();
         }
         
         // An WagonManager weiterleiten über SendMessage (löst Compiler-Abhängigkeitsprobleme)

@@ -1,7 +1,7 @@
 memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
 mother_intro,1,,Eine alte Frau. Sie schaut nachdenklich aus dem Fenster. ,,,,,,,,,,,,,
 mother_crash ,2,,,,first_train_crash,„Haben Sie das bemerkt? Hatten wir einen Unfall mit dem Zug?,"„Einen Unfall? Ich habe nichts bemerkt.""",,,,,,,,,
-mother_coffee,4,,,,spilled_coffee,"„Gehört Ihnen ein Thermobecher mit Sonnenblumenmuster?""","„Nein. Aber ich habe mal so einen verschenkt, an einen Menschen den ich sehr liebte.""",coffecup_gift,,,,,,,,
+mother_coffee,4,,,,spilled_coffee,"„Im nächsten Abteil liegt ein Thermobecher mit einem schönen Sonnenblumenmuster. Gehört er zufällig Ihnen?""","„Nein. Aber ich habe mal so einen verschenkt, an einen Menschen den ich sehr liebte.""",coffecup_gift,,,,,,,,
 mother_ticket,5,,,,ticket_name,"„Wissen Sie wem dieses Ticket gehört?""","„Nein. Aber Thomasen ist ein schöner Name.""",,,,,,,,,
 mother_tommy,6,,,,childname_tommy,„Kennen Sie ein Kind namens Tommy?“,"„Witzig das Sie fragen. Mein Sohn wollte sich immer nur Tommy nennen.""",sonname_tommy,,"„Hier im Zug ist ein Junge Namens Tommy.""","„Oh, aber mein Sohn nennt sich schon lange nicht mehr so.""",sonnamed_tommy,,,,
 mother_son,7,,,,boy_is_alone,"„Der Junge scheint alleine hier zu sein. Sind sie auch alleine hier?""","„Ich war nicht immer allein. Aber seid dem Unfall, bin ich es oft.""",accident_mother,accident_mother,"„Welcher Unfall?""","„Der Unfall auf den Bahngleisen.""",accident_train,accident_train,"„Auf den Gleisen? Wen haben Sie denn verloren?""",...,
