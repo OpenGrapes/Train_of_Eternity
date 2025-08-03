@@ -294,13 +294,13 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    // VEREINFACHTE METHODE: Findet den neuesten verfügbaren Start-Dialog
+    // OPTIMIERT FÜR LINEARES SYSTEM: Findet den neuesten verfügbaren Start-Dialog basierend auf minLoop
     private DialogLine FindNewestAvailableStartDialog()
     {
         if (currentDialog == null) return null;
         
         DialogLine newestDialog = null;
-        int mostRequirements = -1;
+        int highestMinLoop = -1;
         
         // Durchlaufe alle Dialog-Zeilen und finde verfügbare Start-Dialoge
         foreach (var dialogLine in currentDialog)
@@ -311,19 +311,18 @@ public class DialogManager : MonoBehaviour
             // Prüfe ob verfügbar
             if (!IsDialogLineAvailable(dialogLine)) continue;
             
-            // Der Dialog mit den meisten Requirements ist der "neueste"
-            int requirementCount = dialogLine.requiredMemory?.Count ?? 0;
-            
-            if (requirementCount > mostRequirements)
+            // LINEARES SYSTEM: Der Dialog mit der höchsten minLoop ist der "neueste"
+            // Da jeder Dialog nur eine requiredMemory und eine minLoop hat
+            if (dialogLine.minLoop > highestMinLoop)
             {
-                mostRequirements = requirementCount;
+                highestMinLoop = dialogLine.minLoop;
                 newestDialog = dialogLine;
             }
         }
         
         if (newestDialog != null)
         {
-            Debug.Log($"Neuester Start-Dialog gefunden: '{newestDialog.memoryId}' mit {mostRequirements} Requirements");
+            Debug.Log($"Neuester Start-Dialog gefunden: '{newestDialog.memoryId}' mit minLoop {highestMinLoop}");
         }
         
         return newestDialog;
@@ -657,8 +656,54 @@ public class DialogManager : MonoBehaviour
 
     private bool IsChoiceAvailable(DialogLine.ChoiceData choice)
     {
-        // Verwende das neue erweiterte Memory-System vom GameManager
+        // SPEZIELLE REGEL: Choices mit "newdraw" addMemory nur im exakten Loop anzeigen
+        if (choice.addMemory != null && choice.addMemory.Count > 0)
+        {
+            foreach (var memory in choice.addMemory)
+            {
+                if (memory.StartsWith("newdraw"))
+                {
+                    // Diese Choice nur im exakten Loop anzeigen, nicht in späteren
+                    // Prüfe ob wir im richtigen Loop sind basierend auf der parent DialogLine
+                    var parentDialog = GetParentDialogForChoice(choice);
+                    if (parentDialog != null)
+                    {
+                        int currentLoop = GameManager.Instance?.currentLoopCount ?? 1;
+                        if (currentLoop != parentDialog.minLoop)
+                        {
+                            Debug.Log($"Choice '{choice.choiceText}' mit newdraw Memory nur in Loop {parentDialog.minLoop} verfügbar, aktuell: {currentLoop}");
+                            return false; // Nicht im richtigen Loop
+                        }
+                    }
+                    break; // Genug geprüft - ist eine newdraw Choice
+                }
+            }
+        }
+        
+        // Standard-Verfügbarkeitsprüfung vom GameManager
         return GameManager.SafeAreChoiceRequirementsMet(choice);
+    }
+
+    // Hilfsmethode: Findet die parent DialogLine für eine bestimmte Choice
+    private DialogLine GetParentDialogForChoice(DialogLine.ChoiceData targetChoice)
+    {
+        if (currentDialog == null) return null;
+        
+        foreach (var dialogLine in currentDialog)
+        {
+            if (dialogLine.choices != null)
+            {
+                foreach (var choice in dialogLine.choices)
+                {
+                    if (choice == targetChoice)
+                    {
+                        return dialogLine;
+                    }
+                }
+            }
+        }
+        
+        return null; // Choice nicht gefunden
     }
 
     private void ShowChoicesOrEnd()

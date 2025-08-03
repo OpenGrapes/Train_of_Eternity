@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      derFremde_Mit_Gesicht_0: 6545411442466627967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      beispielwagon_0: 2641580069690073028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

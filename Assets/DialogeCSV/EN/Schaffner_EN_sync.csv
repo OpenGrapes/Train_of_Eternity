@@ -1,0 +1,10 @@
+memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
+conductor_intro,1,,The train conductor. He looks tired.,,,,,,,,,,,,,
+conductor_crash,2,,,,first_train_crash,"Did we have an accident? What happened?","Accident? I didn’t notice anything.",,,,,,,,,
+conductor_coffee,3,,,,spilled_coffee,"Did you see why the thermos cup tipped over?","I didn’t notice anything.",,spilled_coffee,"Does the thermos cup belong to you?","No. The cup doesn’t belong to me.",,boozed_coffe,"Why is there alcohol in the coffee?","Young man, I don’t drink during my working hours.",
+conductor_nochange,4,,,,,,,,,,,,,,,
+conductor_ticket,5,,,,ticket_name,"Do you know which passenger this ticket belongs to?","No. But it hasn’t been stamped yet.",ticket_not_stamped,,,,,,,,
+conductor_tommy,6,,,,childname_tommy,"Do you know the boy on the train named Tommy?","No, that doesn’t ring a bell. But I often think about my own children.",conductor_has_children,conductor_has_children,"You have children?",...,,,,,
+conducter_accident,7,,,,accident_train,"Has there ever been an accident on this train?","Yes, there was. It was terrible. The train was crossing a railway when a car suddenly drove onto the tracks out of nowhere.",,accident_train,"What happened then?","The driver didn’t survive. The train driver is still traumatized.",accident_fatality,accident_fatality,"When did the accident happen?","I don’t know. It feels like it was an eternity ago.",
+conductor__broken,8,,,,window_broken,"Did the thermos cup just fly out the window? Did you see anything?","It was really awful when it happened.",,window_broken,"When it flew out the window?","It was foggy that morning.",,,,,
+conductor_thomasen,9,,,,thomasen_is_stranger,"What was the name of the accident’s fatality?","He was only in his mid-thirties. His name was: Thomasen Schmidt.",fatality_is_thomasen,,,,,,,,

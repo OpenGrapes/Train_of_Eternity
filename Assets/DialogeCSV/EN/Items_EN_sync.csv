@@ -1,0 +1,17 @@
+memoryId,minLoop,requiredMemory,text,addMemory
+memoryId,minLoop,requiredMemory,text,addMemory
+mirrow_broken,1,,A broken mirror. Nothing can be seen in it.,
+coffeecup_sunflower,1,,An open thermos cup with yellow sunflowers on it. Steam rises from it. The coffee still seems to be hot.,coffee_hot
+ticket_empty,1,,An empty train ticket.,
+window_rain,1,,A window. It’s raining outside.,
+door_closed,1,,A door. It is locked.,
+loop_intro,2,,What happened? Did the train have an accident?,first_train_crash
+loop_two,3,,I ended up here again. How strange.,spilled_coffee
+coffeecup_spilled,3,,The thermos cup has tipped over. Its contents smell like a mixture of coffee and amaretto.,boozed_coffee
+ticket_name,4,spilled_coffee,The ticket says: Thomasen Schmidt.,ticket_name
+window_face,6,,What was that face? Where did it come from?,window_face_reveal
+window_coffeecup,8,,Did the thermos cup just fly out the window?,window_broken
+loop_last,9,,Now I understand. Thomasen died in a train accident. Because he reached for the thermos cup.,
+mirrow_fixed,10,fixed_mirrow,The mirror is whole again. How is that possible?,all_memorys_collected
+mirrow_face,10,all_memorys_collected,"The stranger’s face in the mirror. Wait, no, it’s my face. I am Thomasen Schmidt. I died because I reached for the thermos cup. I was dead. I was it the whole time. I just couldn’t remember. Or maybe I didn’t want to anymore.",i_am_thomasen
+door_open,10,i_am_thomasen,Now I am ready. I can let go now.,

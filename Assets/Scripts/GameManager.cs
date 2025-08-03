@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
+using System.Collections;
 
 // Memory-Mapping-Datenstrukturen
 [System.Serializable]
@@ -91,6 +94,46 @@ public class GameManager : MonoBehaviour
     [Header("Item System")]
     public ItemData[] items; // Items und ihre CSV-Zuordnungen im Inspector definieren
     
+    [Header("Window2 Image System")]
+    [Tooltip("Window2 GameObject (muss Image Component haben)")]
+    public GameObject window2GameObject;
+    
+    [Tooltip("Canvas Wagon 3 GameObject (zum Prüfen ob Wagon 3 aktiv ist)")]
+    public GameObject canvasWagon3;
+    
+    [Tooltip("Canvas Übergang GameObject (Countdown startet erst wenn NICHT aktiv)")]
+    public GameObject canvasUebergang;
+    
+    [Tooltip("Das neue Sprite das angezeigt werden soll")]
+    public Sprite newWindow2Sprite;
+    
+    [Tooltip("Zeit in Sekunden bis das Image gewechselt wird")]
+    public float window2SwitchDelay = 3f;
+    
+    [Tooltip("Soll das EventSystem während der Wartezeit deaktiviert werden?")]
+    public bool disableEventSystemDuringWindow2Switch = true;
+    
+    [Tooltip("AudioSource mit Countdown-Sound (optional - AudioClip direkt in der AudioSource setzen)")]
+    public AudioSource window2CountdownAudioSource;
+    
+    [Tooltip("AudioSource für Hintergrundmusik VOR Window2-System (Play on Awake + Loop, stoppt bei Countdown-Start)")]
+    public AudioSource preWindow2BackgroundMusicAudioSource;
+    
+    [Tooltip("AudioSource für Hintergrundmusik nach Countdown (loopt dauerhaft)")]
+    public AudioSource backgroundMusicAudioSource;
+    
+    [Tooltip("Canvas Hauptmenü GameObject (Hintergrundmusik stoppt wenn aktiv)")]
+    public GameObject canvasHauptmenu;
+    
+    [Header("Auto Dialog System")]
+    [Tooltip("ItemInteractable GameObject das nach Window2-Wechsel automatisch angeklickt werden soll")]
+    public GameObject autoClickItemAfterWindow2;
+    [Tooltip("Verzögerung in Sekunden nach EventSystem-Aktivierung bevor Auto-Click ausgeführt wird")]
+    public float autoClickDelay = 0.5f;
+    
+    [Header("Debug")]
+    public bool showDebugLogs = true;
+    
     // Memory-System
     private HashSet<string> memoryFlags = new HashSet<string>();
     
@@ -118,6 +161,14 @@ public class GameManager : MonoBehaviour
     // Item-System
     private Dictionary<string, ItemData> itemRegistry = new Dictionary<string, ItemData>();
     
+    // Window2 Image System  
+    private Sprite originalWindow2Sprite;
+    private EventSystem eventSystem;
+    private bool hasWindow2Switched = false;
+    private bool isWindow2Switching = false;
+    private bool window2SystemInitialized = false;
+    private bool backgroundMusicStarted = false;
+    
     private void Awake()
     {
         // Singleton Pattern
@@ -129,6 +180,7 @@ public class GameManager : MonoBehaviour
             RegisterAllNPCs();
             RegisterAllItems();
             InitializeLoopProgressionSystem();
+            InitializeWindow2System();
         }
         else
         {
@@ -165,6 +217,475 @@ public class GameManager : MonoBehaviour
                 string csvName = GetCSVFileNameByIndex(item.csvFileIndex);
                 Debug.Log($"Item registriert: {item.itemId} -> CSV Index {item.csvFileIndex} ({csvName})");
             }
+        }
+    }
+    
+    // Window2 Image System initialisieren
+    private void InitializeWindow2System()
+    {
+        if (showDebugLogs)
+        {
+            Debug.Log("=== INITIALISIERE WINDOW2 IMAGE SYSTEM ===");
+        }
+        
+        // Validierung
+        if (window2GameObject == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning("Window2 System: Kein Window2 GameObject zugewiesen!");
+            }
+            return;
+        }
+        
+        if (canvasWagon3 == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning("Window2 System: Kein CanvasWagon3 GameObject zugewiesen!");
+            }
+            return;
+        }
+        
+        if (canvasUebergang == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning("Window2 System: Kein CanvasÜbergang GameObject zugewiesen!");
+            }
+            return;
+        }
+        
+        if (newWindow2Sprite == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning("Window2 System: Kein neues Sprite zugewiesen!");
+            }
+            return;
+        }
+        
+        // Image Component vom Window2 GameObject holen
+        var window2Image = window2GameObject.GetComponent<Image>();
+        if (window2Image == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning("Window2 System: Window2 GameObject hat keine Image Component!");
+            }
+            return;
+        }
+        
+        // Original Sprite speichern
+        originalWindow2Sprite = window2Image.sprite;
+        
+        // EventSystem finden
+        eventSystem = EventSystem.current;
+        
+        window2SystemInitialized = true;
+        
+        if (showDebugLogs)
+        {
+            Debug.Log($"✅ WINDOW2 SYSTEM INITIALISIERT");
+            Debug.Log($"Window2 GameObject: {window2GameObject.name}");
+            Debug.Log($"CanvasWagon3: {canvasWagon3.name}");
+            Debug.Log($"CanvasÜbergang: {canvasUebergang.name}");
+            Debug.Log($"Original Sprite: {(originalWindow2Sprite != null ? originalWindow2Sprite.name : "null")}");
+            Debug.Log($"Neues Sprite: {newWindow2Sprite.name}");
+            Debug.Log($"Switch Delay: {window2SwitchDelay} Sekunden");
+            Debug.Log($"EventSystem deaktivieren: {disableEventSystemDuringWindow2Switch}");
+            Debug.Log($"Countdown AudioSource: {(window2CountdownAudioSource != null ? window2CountdownAudioSource.name : "nicht zugewiesen")}");
+            Debug.Log($"Pre-Window2 Background Music AudioSource: {(preWindow2BackgroundMusicAudioSource != null ? preWindow2BackgroundMusicAudioSource.name : "nicht zugewiesen")}");
+            Debug.Log($"Background Music AudioSource: {(backgroundMusicAudioSource != null ? backgroundMusicAudioSource.name : "nicht zugewiesen")}");
+            Debug.Log($"Canvas Hauptmenü: {(canvasHauptmenu != null ? canvasHauptmenu.name : "nicht zugewiesen")}");
+            Debug.Log($"Auto-Click Item: {(autoClickItemAfterWindow2 != null ? autoClickItemAfterWindow2.name : "nicht zugewiesen")}");
+            Debug.Log($"Auto-Click Delay: {autoClickDelay} Sekunden");
+        }
+    }
+    
+    private void Update()
+    {
+        // Window2 Image System überwachen
+        if (window2SystemInitialized)
+        {
+            CheckWindow2ImageSwitch();
+            CheckBackgroundMusicState();
+        }
+    }
+    
+    // Prüfe ob Window2 Image gewechselt werden soll
+    private void CheckWindow2ImageSwitch()
+    {
+        // Bereits gewechselt?
+        if (hasWindow2Switched)
+            return;
+            
+        // Ist CanvasÜbergang aktiv? (Übergang muss aktiv sein)
+        if (canvasUebergang == null || !canvasUebergang.activeInHierarchy)
+            return;
+            
+        // Ist CanvasWagon3 aktiv? (Spieler muss in Wagon 3 sein)
+        if (canvasWagon3 == null || !canvasWagon3.activeInHierarchy)
+            return;
+            
+        // Ist Window2 GameObject aktiv?
+        if (window2GameObject == null || !window2GameObject.activeInHierarchy)
+            return;
+            
+        // Hat Window2 eine Image Component und ist diese aktiviert?
+        var window2Image = window2GameObject.GetComponent<Image>();
+        if (window2Image == null || !window2Image.enabled)
+            return;
+        
+        // Alle Bedingungen erfüllt - starte Image Wechsel
+        if (showDebugLogs)
+        {
+            Debug.Log($"🎯 WINDOW2 IMAGE WECHSEL AKTIVIERT: Übergang aktiv, CanvasWagon3 aktiv, Window2 Image aktiviert");
+        }
+        
+        // Pre-Window2 Hintergrundmusik sofort stoppen (falls sie läuft)
+        if (preWindow2BackgroundMusicAudioSource != null && preWindow2BackgroundMusicAudioSource.isPlaying)
+        {
+            preWindow2BackgroundMusicAudioSource.Stop();
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"🎵 Pre-Window2 Hintergrundmusik gestoppt: {(preWindow2BackgroundMusicAudioSource.clip != null ? preWindow2BackgroundMusicAudioSource.clip.name : "unknown")}");
+            }
+        }
+        
+        StartCoroutine(SwitchWindow2ImageAfterDelay());
+    }
+    
+    // Coroutine für Window2 Image Wechsel mit Countdown
+    private IEnumerator SwitchWindow2ImageAfterDelay()
+    {
+        if (hasWindow2Switched || isWindow2Switching) yield break;
+        
+        isWindow2Switching = true;
+        
+        if (showDebugLogs)
+        {
+            Debug.Log($"Window2 Timer läuft für {window2SwitchDelay} Sekunden");
+        }
+        
+        // Countdown-Sound starten (optional)
+        bool soundWasStarted = false;
+        if (window2CountdownAudioSource != null && window2CountdownAudioSource.clip != null)
+        {
+            window2CountdownAudioSource.loop = false; // Nur einmal abspielen
+            window2CountdownAudioSource.Play();
+            soundWasStarted = true;
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"Countdown-Sound gestartet: {window2CountdownAudioSource.clip.name} (einmalig)");
+            }
+        }
+        
+        // EventSystem deaktivieren (optional)
+        bool eventSystemWasEnabled = false;
+        if (disableEventSystemDuringWindow2Switch && eventSystem != null)
+        {
+            eventSystemWasEnabled = eventSystem.enabled;
+            eventSystem.enabled = false;
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"EventSystem deaktiviert für {window2SwitchDelay} Sekunden");
+            }
+        }
+        
+        // Warte 2 Sekunden, dann starte Hintergrundmusik
+        yield return new WaitForSeconds(2f);
+        
+        // Hintergrundmusik nach 2 Sekunden starten
+        StartBackgroundMusic();
+        
+        // Warte die restliche Zeit bis zum Image-Wechsel
+        float remainingDelay = window2SwitchDelay - 2f;
+        if (remainingDelay > 0)
+        {
+            yield return new WaitForSeconds(remainingDelay);
+        }
+        
+        // Image wechseln
+        var window2Image = window2GameObject.GetComponent<Image>();
+        if (window2Image != null && newWindow2Sprite != null)
+        {
+            window2Image.sprite = newWindow2Sprite;
+            hasWindow2Switched = true;
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"✅ WINDOW2 IMAGE GEWECHSELT von '{(originalWindow2Sprite != null ? originalWindow2Sprite.name : "null")}' zu '{newWindow2Sprite.name}'");
+            }
+        }
+        
+        // Countdown-Sound stoppen (optional) - nur falls er noch läuft
+        if (soundWasStarted && window2CountdownAudioSource != null && window2CountdownAudioSource.isPlaying)
+        {
+            window2CountdownAudioSource.Stop();
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"Countdown-Sound gestoppt (war noch am Laufen)");
+            }
+        }
+        else if (soundWasStarted && showDebugLogs)
+        {
+            Debug.Log($"Countdown-Sound war bereits beendet");
+        }
+        
+        // EventSystem wieder aktivieren (falls es deaktiviert wurde)
+        if (disableEventSystemDuringWindow2Switch && eventSystem != null && eventSystemWasEnabled)
+        {
+            eventSystem.enabled = true;
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"EventSystem wieder aktiviert nach Window2 Image-Wechsel");
+            }
+            
+            // Auto-Click für ItemInteractable nach kurzer Verzögerung
+            if (autoClickItemAfterWindow2 != null)
+            {
+                StartCoroutine(AutoClickItemAfterDelay());
+            }
+        }
+        
+        if (showDebugLogs)
+        {
+            Debug.Log($"Window2 Image-Wechsel abgeschlossen");
+        }
+        
+        isWindow2Switching = false;
+    }
+    
+    // Auto-Click für ItemInteractable nach Window2-Wechsel
+    private IEnumerator AutoClickItemAfterDelay()
+    {
+        if (showDebugLogs)
+        {
+            Debug.Log($"🎯 AUTO-CLICK: Warte {autoClickDelay} Sekunden bevor ItemInteractable angeklickt wird...");
+        }
+        
+        // Kurze Verzögerung um sicherzustellen dass EventSystem vollständig aktiviert ist
+        yield return new WaitForSeconds(autoClickDelay);
+        
+        if (autoClickItemAfterWindow2 == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning("AUTO-CLICK: Kein ItemInteractable GameObject zugewiesen!");
+            }
+            yield break;
+        }
+        
+        // Prüfe ob das GameObject aktiv ist
+        if (!autoClickItemAfterWindow2.activeInHierarchy)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogWarning($"AUTO-CLICK: ItemInteractable GameObject '{autoClickItemAfterWindow2.name}' ist nicht aktiv!");
+            }
+            yield break;
+        }
+        
+        // Suche nach ItemInteractable Component
+        var itemInteractable = autoClickItemAfterWindow2.GetComponent<ItemInteractable>();
+        if (itemInteractable == null)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogError($"AUTO-CLICK: GameObject '{autoClickItemAfterWindow2.name}' hat keine ItemInteractable Component!");
+            }
+            yield break;
+        }
+        
+        // Führe OnButtonClick() Methode aus
+        try
+        {
+            itemInteractable.OnButtonClick();
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"✅ AUTO-CLICK ERFOLGREICH: ItemInteractable '{autoClickItemAfterWindow2.name}' wurde automatisch angeklickt - Dialog sollte starten");
+            }
+        }
+        catch (System.Exception e)
+        {
+            if (showDebugLogs)
+            {
+                Debug.LogError($"AUTO-CLICK FEHLER: Konnte ItemInteractable '{autoClickItemAfterWindow2.name}' nicht anklicken - {e.Message}");
+            }
+        }
+    }
+    
+    // Hintergrundmusik nach Window2-Wechsel starten
+    private void StartBackgroundMusic()
+    {
+        if (backgroundMusicStarted) return; // Bereits gestartet
+        
+        if (backgroundMusicAudioSource != null && backgroundMusicAudioSource.clip != null)
+        {
+            // Prüfe ob Hauptmenü aktiv ist
+            if (canvasHauptmenu != null && canvasHauptmenu.activeInHierarchy)
+            {
+                if (showDebugLogs)
+                {
+                    Debug.Log("Hintergrundmusik nicht gestartet - Hauptmenü ist aktiv");
+                }
+                return;
+            }
+            
+            backgroundMusicAudioSource.loop = true; // Dauerhaft loopen
+            backgroundMusicAudioSource.Play();
+            backgroundMusicStarted = true;
+            
+            if (showDebugLogs)
+            {
+                Debug.Log($"🎵 HINTERGRUNDMUSIK GESTARTET: {backgroundMusicAudioSource.clip.name} (dauerhaft geloopt)");
+            }
+        }
+        else if (showDebugLogs)
+        {
+            Debug.LogWarning("Hintergrundmusik konnte nicht gestartet werden - AudioSource oder AudioClip fehlt");
+        }
+    }
+    
+    // Überwache Hintergrundmusik-Status basierend auf Hauptmenü
+    private void CheckBackgroundMusicState()
+    {
+        if (!backgroundMusicStarted || backgroundMusicAudioSource == null) return;
+        
+        bool hauptmenuActive = canvasHauptmenu != null && canvasHauptmenu.activeInHierarchy;
+        bool musicPlaying = backgroundMusicAudioSource.isPlaying;
+        
+        if (hauptmenuActive && musicPlaying)
+        {
+            // Hauptmenü aktiv -> Musik stoppen
+            backgroundMusicAudioSource.Stop();
+            
+            if (showDebugLogs)
+            {
+                Debug.Log("🎵 Hintergrundmusik gestoppt - Hauptmenü aktiv");
+            }
+        }
+        else if (!hauptmenuActive && !musicPlaying && backgroundMusicStarted)
+        {
+            // Hauptmenü nicht aktiv und Musik läuft nicht -> Musik starten
+            backgroundMusicAudioSource.Play();
+            
+            if (showDebugLogs)
+            {
+                Debug.Log("🎵 Hintergrundmusik fortgesetzt - Hauptmenü verlassen");
+            }
+        }
+    }
+    
+    // Debug-Methode für Window2 System
+    [ContextMenu("Debug Window2 Image System")]
+    public void DebugWindow2ImageSystem()
+    {
+        Debug.Log("=== WINDOW2 IMAGE SYSTEM DEBUG ===");
+        Debug.Log($"System initialisiert: {window2SystemInitialized}");
+        Debug.Log($"Window2 GameObject zugewiesen: {window2GameObject != null}");
+        Debug.Log($"CanvasWagon3 zugewiesen: {canvasWagon3 != null}");
+        Debug.Log($"CanvasÜbergang zugewiesen: {canvasUebergang != null}");
+        Debug.Log($"New Sprite zugewiesen: {newWindow2Sprite != null}");
+        Debug.Log($"Switch Delay: {window2SwitchDelay} Sekunden");
+        Debug.Log($"Switching in Progress: {isWindow2Switching}");
+        Debug.Log($"Bereits gewechselt: {hasWindow2Switched}");
+        Debug.Log($"AudioSource zugewiesen: {window2CountdownAudioSource != null}");
+        Debug.Log($"AudioClip in AudioSource: {(window2CountdownAudioSource != null && window2CountdownAudioSource.clip != null)}");
+        Debug.Log($"Pre-Window2 Background Music AudioSource zugewiesen: {preWindow2BackgroundMusicAudioSource != null}");
+        Debug.Log($"Pre-Window2 Background Music AudioClip: {(preWindow2BackgroundMusicAudioSource != null && preWindow2BackgroundMusicAudioSource.clip != null)}");
+        Debug.Log($"Pre-Window2 Background Music läuft: {(preWindow2BackgroundMusicAudioSource != null && preWindow2BackgroundMusicAudioSource.isPlaying)}");
+        Debug.Log($"Background Music AudioSource zugewiesen: {backgroundMusicAudioSource != null}");
+        Debug.Log($"Background Music AudioClip: {(backgroundMusicAudioSource != null && backgroundMusicAudioSource.clip != null)}");
+        Debug.Log($"Background Music gestartet: {backgroundMusicStarted}");
+        Debug.Log($"Background Music läuft: {(backgroundMusicAudioSource != null && backgroundMusicAudioSource.isPlaying)}");
+        Debug.Log($"Canvas Hauptmenü zugewiesen: {canvasHauptmenu != null}");
+        
+        if (backgroundMusicAudioSource != null && backgroundMusicAudioSource.clip != null)
+        {
+            Debug.Log($"  - Background Music Clip Name: {backgroundMusicAudioSource.clip.name}");
+        }
+        
+        if (preWindow2BackgroundMusicAudioSource != null && preWindow2BackgroundMusicAudioSource.clip != null)
+        {
+            Debug.Log($"  - Pre-Window2 Background Music Clip Name: {preWindow2BackgroundMusicAudioSource.clip.name}");
+        }
+        
+        if (canvasUebergang != null)
+        {
+            Debug.Log($"  - CanvasÜbergang aktiv: {canvasUebergang.activeInHierarchy} (Countdown braucht: aktiv)");
+        }
+        
+        if (canvasWagon3 != null)
+        {
+            Debug.Log($"  - CanvasWagon3 aktiv: {canvasWagon3.activeInHierarchy} (Countdown braucht: aktiv)");
+        }
+        
+        if (canvasHauptmenu != null)
+        {
+            Debug.Log($"  - Canvas Hauptmenü aktiv: {canvasHauptmenu.activeInHierarchy} (Hintergrundmusik stoppt wenn aktiv)");
+        }
+        
+        // Auto-Click System Info
+        Debug.Log($"Auto-Click System:");
+        Debug.Log($"  - Auto-Click Item zugewiesen: {autoClickItemAfterWindow2 != null}");
+        if (autoClickItemAfterWindow2 != null)
+        {
+            Debug.Log($"  - Auto-Click Item GameObject: {autoClickItemAfterWindow2.name}");
+            Debug.Log($"  - Auto-Click Item aktiv: {autoClickItemAfterWindow2.activeInHierarchy}");
+            var itemComponent = autoClickItemAfterWindow2.GetComponent<ItemInteractable>();
+            Debug.Log($"  - ItemInteractable Component vorhanden: {itemComponent != null}");
+            if (itemComponent != null)
+            {
+                Debug.Log($"  - ItemInteractable Item-ID: {itemComponent.itemId}");
+                Debug.Log($"  - ItemInteractable hat verfügbare Dialoge: {itemComponent.HasAvailableDialogs()}");
+            }
+        }
+        Debug.Log($"  - Auto-Click Delay: {autoClickDelay} Sekunden");
+        
+        if (window2GameObject != null)
+        {
+            Debug.Log($"  - Window2 GameObject aktiv: {window2GameObject.activeInHierarchy}");
+            var window2Image = window2GameObject.GetComponent<Image>();
+            if (window2Image != null)
+            {
+                Debug.Log($"  - Window2 Image aktiviert: {window2Image.enabled}");
+                Debug.Log($"  - Aktuelle Sprite: {(window2Image.sprite != null ? window2Image.sprite.name : "NULL")}");
+            }
+            else
+            {
+                Debug.Log($"  - Window2 hat keine Image Component!");
+            }
+        }
+        else
+        {
+            Debug.Log("  - Kein Window2 GameObject zugewiesen!");
+        }
+    }
+    
+    // Manueller Test für Window2 System
+    [ContextMenu("Test Window2 Switch Now")]
+    public void TestWindow2SwitchNow()
+    {
+        if (window2SystemInitialized && !hasWindow2Switched)
+        {
+            Debug.Log("Window2 Switch manuell gestartet (Test)");
+            StartCoroutine(SwitchWindow2ImageAfterDelay());
+        }
+        else if (hasWindow2Switched)
+        {
+            Debug.Log("Window2 bereits gewechselt");
+        }
+        else
+        {
+            Debug.Log("Window2 System nicht initialisiert");
         }
     }
     
@@ -1502,10 +2023,6 @@ public class GameManager : MonoBehaviour
         return bestDialog;
     }
     
-    // Debug flag für Dialog Evolution
-    [Header("Dialog Evolution")]
-    public bool showDebugLogs = true;
-    
     // Prüfe ob alle Dialog-Requirements erfüllt sind
     private bool AreDialogRequirementsMet(DialogLine dialog)
     {
@@ -1617,6 +2134,13 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Aktueller Loop: {currentLoopCount}");
         Debug.Log($"Memories in diesem Loop gefunden: {memoriesFoundInCurrentLoop.Count} [{string.Join(", ", memoriesFoundInCurrentLoop)}]");
         
+        // SPEZIELLE REGEL: Loop 1 und 2 sind immer gültig (keine Memory-Anforderungen)
+        if (currentLoopCount == 1 || currentLoopCount == 2)
+        {
+            Debug.Log($"✅ LOOP {currentLoopCount} AUTOMATISCH GÜLTIG: Loop 1 und 2 haben keine Memory-Anforderungen");
+            return true;
+        }
+        
         // Prüfe ob es für diesen Loop überhaupt verfügbare Memories gibt
         if (!requiredMemoriesPerLoop.ContainsKey(currentLoopCount))
         {
@@ -1657,6 +2181,44 @@ public class GameManager : MonoBehaviour
     {
         currentLoopCount = 1;
         memoriesFoundInCurrentLoop.Clear();
+        
+        // Window2 Image System zurücksetzen
+        if (window2SystemInitialized)
+        {
+            isWindow2Switching = false;
+            
+            // Sound stoppen falls noch aktiv
+            if (window2CountdownAudioSource != null && window2CountdownAudioSource.isPlaying)
+            {
+                window2CountdownAudioSource.Stop();
+                
+                if (showDebugLogs)
+                {
+                    Debug.Log("Window2 Countdown-Sound gestoppt (Reset)");
+                }
+            }
+            
+            // Image zurück zum Original setzen
+            if (window2GameObject != null && originalWindow2Sprite != null)
+            {
+                var window2Image = window2GameObject.GetComponent<Image>();
+                if (window2Image != null)
+                {
+                    window2Image.sprite = originalWindow2Sprite;
+                    
+                    if (showDebugLogs)
+                    {
+                        Debug.Log("Window2 Image zurück zum Original gesetzt");
+                    }
+                }
+            }
+            
+            if (showDebugLogs)
+            {
+                Debug.Log("Window2 Image System zurückgesetzt");
+            }
+        }
+        
         Debug.Log("Loop zurückgesetzt - Memory-Tracker geleert");
     }
     
