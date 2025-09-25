@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3d9a0283fa6d5aa41bc1b3242e2281df
+guid: 4db5064535e4e4f4c8650e93893ac876
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2816730596665575109
-    second: Wagon1SpiegelKaputt_0
+      213: 733178714936933721
+    second: Wagon3Koffer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wagon1SpiegelKaputt_0
+      name: Wagon3Koffer_0
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 828
-        width: 220
-        height: 220
+        x: 1703
+        y: 415
+        width: 355
+        height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3936cd2276f8e8d0800000000000000
-      internalID: -2816730596665575109
+      spriteID: 95d71bc1826cc2a00800000000000000
+      internalID: 733178714936933721
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 15b5d40dd0eb5d34ba0b5343e1814740
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wagon1SpiegelKaputt_0: -2816730596665575109
+      Wagon3Koffer_0: 733178714936933721
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

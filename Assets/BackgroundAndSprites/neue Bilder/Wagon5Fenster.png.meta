@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 3d9a0283fa6d5aa41bc1b3242e2281df
+guid: a98e5e749ef1ada44ad017b02b1a5b3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2816730596665575109
-    second: Wagon1SpiegelKaputt_0
+      213: 8983862315231949015
+    second: Wagon5Fenster_0
+  - first:
+      213: 7612339354533650992
+    second: Wagon5Fenster_1
+  - first:
+      213: -5489377761424056998
+    second: Wagon5Fenster_2
+  - first:
+      213: 3672038756911734432
+    second: Wagon5Fenster_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wagon1SpiegelKaputt_0
+      name: Wagon5Fenster_0
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 828
-        width: 220
-        height: 220
+        x: 131
+        y: 832
+        width: 266
+        height: 378
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3936cd2276f8e8d0800000000000000
-      internalID: -2816730596665575109
+      spriteID: 7d03b6a5d271dac70800000000000000
+      internalID: 8983862315231949015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon5Fenster_1
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 940
+        width: 146
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03264b0af4674a960800000000000000
+      internalID: 7612339354533650992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon5Fenster_2
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 962
+        width: 146
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5dd36c8200d1d3b0800000000000000
+      internalID: -5489377761424056998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon5Fenster_3
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 853
+        width: 266
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aed03b4bc3b5f230800000000000000
+      internalID: 3672038756911734432
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 15b5d40dd0eb5d34ba0b5343e1814740
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wagon1SpiegelKaputt_0: -2816730596665575109
+      Wagon5Fenster_0: 8983862315231949015
+      Wagon5Fenster_1: 7612339354533650992
+      Wagon5Fenster_2: -5489377761424056998
+      Wagon5Fenster_3: 3672038756911734432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

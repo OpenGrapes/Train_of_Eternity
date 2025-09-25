@@ -24,6 +24,7 @@ public class DialogManager : MonoBehaviour
 
     [Header("UI References")]
     public GameObject dialogPanel;
+    public GameObject blockerPanel; // Blockiert Klicks im Level
     public TextMeshProUGUI dialogText;
     public TextMeshProUGUI sprecherName; // UI-Element für Sprecher-Name oben rechts
     public Button[] choiceButtons; // Array für Antwortbuttons (direkt im DialogPanel)
@@ -46,7 +47,10 @@ public class DialogManager : MonoBehaviour
         if (dialogPanel != null)
         {
             dialogPanel.SetActive(false);
-            // ENTFERNT: SetupDialogPanelButton(); - Diese Methode existiert nicht
+        }
+        if (blockerPanel != null)
+        {
+            blockerPanel.SetActive(false);
         }
         
         // Choice-Buttons mit Events ausstatten
@@ -202,6 +206,7 @@ public class DialogManager : MonoBehaviour
 
         Debug.Log("Aktiviere DialogPanel...");
         dialogPanel.SetActive(true);
+        if (blockerPanel != null) blockerPanel.SetActive(true);
         
         HideAllChoiceButtons();
         currentDialog = dialog;
@@ -709,12 +714,11 @@ public class DialogManager : MonoBehaviour
     private void ShowChoicesOrEnd()
     {
         Debug.Log("ShowChoicesOrEnd: Keine Choices mehr verfügbar - Dialog beenden");
-        
         if (dialogPanel != null)
         {
             dialogPanel.SetActive(false);
         }
-        
+        if (blockerPanel != null) blockerPanel.SetActive(false);
         onDialogEnd?.Invoke();
     }
 
