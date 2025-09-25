@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvasUebergang;
     
     [Tooltip("Das neue Sprite das angezeigt werden soll")]
-    public Sprite newWindow2Sprite;
+    public GameObject newWindow2ImageObject;
     
     [Tooltip("Zeit in Sekunden bis das Image gewechselt wird")]
     public float window2SwitchDelay = 3f;
@@ -256,11 +256,11 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        if (newWindow2Sprite == null)
+        if (newWindow2ImageObject == null)
         {
             if (showDebugLogs)
             {
-                Debug.LogWarning("Window2 System: Kein neues Sprite zugewiesen!");
+                Debug.LogWarning("Window2 System: Kein neues Image-Objekt zugewiesen!");
             }
             return;
         }
@@ -291,7 +291,7 @@ public class GameManager : MonoBehaviour
             Debug.Log($"CanvasWagon3: {canvasWagon3.name}");
             Debug.Log($"CanvasÜbergang: {canvasUebergang.name}");
             Debug.Log($"Original Sprite: {(originalWindow2Sprite != null ? originalWindow2Sprite.name : "null")}");
-            Debug.Log($"Neues Sprite: {newWindow2Sprite.name}");
+            Debug.Log($"Neues Sprite: {newWindow2ImageObject.name}");
             Debug.Log($"Switch Delay: {window2SwitchDelay} Sekunden");
             Debug.Log($"EventSystem deaktivieren: {disableEventSystemDuringWindow2Switch}");
             Debug.Log($"Countdown AudioSource: {(window2CountdownAudioSource != null ? window2CountdownAudioSource.name : "nicht zugewiesen")}");
@@ -411,14 +411,15 @@ public class GameManager : MonoBehaviour
         
         // Image wechseln
         var window2Image = window2GameObject.GetComponent<Image>();
-        if (window2Image != null && newWindow2Sprite != null)
+        if (window2Image != null && newWindow2ImageObject != null)
         {
-            window2Image.sprite = newWindow2Sprite;
+            window2GameObject.SetActive(false);
+            newWindow2ImageObject.SetActive(true);
             hasWindow2Switched = true;
             
             if (showDebugLogs)
             {
-                Debug.Log($"✅ WINDOW2 IMAGE GEWECHSELT von '{(originalWindow2Sprite != null ? originalWindow2Sprite.name : "null")}' zu '{newWindow2Sprite.name}'");
+                Debug.Log($"✅ WINDOW2 IMAGE-OBJEKT AKTIVIERT: {newWindow2ImageObject.name}, altes deaktiviert: {window2GameObject.name}");
             }
         }
         
@@ -593,7 +594,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Window2 GameObject zugewiesen: {window2GameObject != null}");
         Debug.Log($"CanvasWagon3 zugewiesen: {canvasWagon3 != null}");
         Debug.Log($"CanvasÜbergang zugewiesen: {canvasUebergang != null}");
-        Debug.Log($"New Sprite zugewiesen: {newWindow2Sprite != null}");
+        Debug.Log($"New Sprite zugewiesen: {newWindow2ImageObject != null}");
         Debug.Log($"Switch Delay: {window2SwitchDelay} Sekunden");
         Debug.Log($"Switching in Progress: {isWindow2Switching}");
         Debug.Log($"Bereits gewechselt: {hasWindow2Switched}");
@@ -2034,6 +2035,7 @@ public class GameManager : MonoBehaviour
         foreach (var requirement in dialog.requiredMemory)
         {
             if (!HasMemory(requirement))
+
             {
                 return false;
             }
