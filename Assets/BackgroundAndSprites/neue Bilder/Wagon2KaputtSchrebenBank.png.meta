@@ -1,0 +1,3822 @@
+fileFormatVersion: 2
+guid: 50727bde3e000aa4c9a8ef58b09aa1d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4435211140001665925
+    second: Wagon2KaputtSchrebenBank_0
+  - first:
+      213: 8869124618903239276
+    second: Wagon2KaputtSchrebenBank_1
+  - first:
+      213: 1239146738588295341
+    second: Wagon2KaputtSchrebenBank_2
+  - first:
+      213: -7300013485065541072
+    second: Wagon2KaputtSchrebenBank_3
+  - first:
+      213: 6855809785003088084
+    second: Wagon2KaputtSchrebenBank_4
+  - first:
+      213: -845456767675666429
+    second: Wagon2KaputtSchrebenBank_5
+  - first:
+      213: 1470979029177680771
+    second: Wagon2KaputtSchrebenBank_6
+  - first:
+      213: 5863587169720803221
+    second: Wagon2KaputtSchrebenBank_7
+  - first:
+      213: -8320189721192051891
+    second: Wagon2KaputtSchrebenBank_8
+  - first:
+      213: -1327483630735700183
+    second: Wagon2KaputtSchrebenBank_9
+  - first:
+      213: -7429574406641061543
+    second: Wagon2KaputtSchrebenBank_10
+  - first:
+      213: 7353506010489946652
+    second: Wagon2KaputtSchrebenBank_11
+  - first:
+      213: 2375425789490321515
+    second: Wagon2KaputtSchrebenBank_12
+  - first:
+      213: 3067640483257469917
+    second: Wagon2KaputtSchrebenBank_13
+  - first:
+      213: 2007219998748269914
+    second: Wagon2KaputtSchrebenBank_14
+  - first:
+      213: -4757574468386078120
+    second: Wagon2KaputtSchrebenBank_15
+  - first:
+      213: 5123565330919929207
+    second: Wagon2KaputtSchrebenBank_16
+  - first:
+      213: -1909428858848295780
+    second: Wagon2KaputtSchrebenBank_17
+  - first:
+      213: 226711658411368906
+    second: Wagon2KaputtSchrebenBank_18
+  - first:
+      213: -4757737670669072554
+    second: Wagon2KaputtSchrebenBank_19
+  - first:
+      213: 5094360453383033634
+    second: Wagon2KaputtSchrebenBank_20
+  - first:
+      213: -139317171391337520
+    second: Wagon2KaputtSchrebenBank_21
+  - first:
+      213: -8776762215432445568
+    second: Wagon2KaputtSchrebenBank_22
+  - first:
+      213: -5516722829160922931
+    second: Wagon2KaputtSchrebenBank_23
+  - first:
+      213: -3405818615953814319
+    second: Wagon2KaputtSchrebenBank_24
+  - first:
+      213: 2601485485211173636
+    second: Wagon2KaputtSchrebenBank_25
+  - first:
+      213: -2205014735219282486
+    second: Wagon2KaputtSchrebenBank_26
+  - first:
+      213: -1848760615268122313
+    second: Wagon2KaputtSchrebenBank_27
+  - first:
+      213: -8520238285662319872
+    second: Wagon2KaputtSchrebenBank_28
+  - first:
+      213: -6656357638851990041
+    second: Wagon2KaputtSchrebenBank_29
+  - first:
+      213: 1630385504067288267
+    second: Wagon2KaputtSchrebenBank_30
+  - first:
+      213: 8149507500257656560
+    second: Wagon2KaputtSchrebenBank_31
+  - first:
+      213: -6727008749204569313
+    second: Wagon2KaputtSchrebenBank_32
+  - first:
+      213: -6465598330946969986
+    second: Wagon2KaputtSchrebenBank_33
+  - first:
+      213: 7557535644267508352
+    second: Wagon2KaputtSchrebenBank_34
+  - first:
+      213: -5441666336581277310
+    second: Wagon2KaputtSchrebenBank_35
+  - first:
+      213: -538706600508617832
+    second: Wagon2KaputtSchrebenBank_36
+  - first:
+      213: -2936807697108556508
+    second: Wagon2KaputtSchrebenBank_37
+  - first:
+      213: -4727564434747083714
+    second: Wagon2KaputtSchrebenBank_38
+  - first:
+      213: 6948153642562155118
+    second: Wagon2KaputtSchrebenBank_39
+  - first:
+      213: 3971734731331355285
+    second: Wagon2KaputtSchrebenBank_40
+  - first:
+      213: 1388899035372713888
+    second: Wagon2KaputtSchrebenBank_41
+  - first:
+      213: -5291960185058688532
+    second: Wagon2KaputtSchrebenBank_42
+  - first:
+      213: 7255212669059467857
+    second: Wagon2KaputtSchrebenBank_43
+  - first:
+      213: -3604675014776664426
+    second: Wagon2KaputtSchrebenBank_44
+  - first:
+      213: -5166949004092748442
+    second: Wagon2KaputtSchrebenBank_45
+  - first:
+      213: 8218456528171316300
+    second: Wagon2KaputtSchrebenBank_46
+  - first:
+      213: 8781402514205901919
+    second: Wagon2KaputtSchrebenBank_47
+  - first:
+      213: 2743227639997134694
+    second: Wagon2KaputtSchrebenBank_48
+  - first:
+      213: -5844162647354556989
+    second: Wagon2KaputtSchrebenBank_49
+  - first:
+      213: 7980033192037103691
+    second: Wagon2KaputtSchrebenBank_50
+  - first:
+      213: 6628513509032750277
+    second: Wagon2KaputtSchrebenBank_51
+  - first:
+      213: -4958814547102645223
+    second: Wagon2KaputtSchrebenBank_52
+  - first:
+      213: -5254838491383774176
+    second: Wagon2KaputtSchrebenBank_53
+  - first:
+      213: 392528744955568122
+    second: Wagon2KaputtSchrebenBank_54
+  - first:
+      213: -5089846410191848158
+    second: Wagon2KaputtSchrebenBank_55
+  - first:
+      213: 4361228042470552436
+    second: Wagon2KaputtSchrebenBank_56
+  - first:
+      213: 1975155482647388816
+    second: Wagon2KaputtSchrebenBank_57
+  - first:
+      213: 4517673190530004327
+    second: Wagon2KaputtSchrebenBank_58
+  - first:
+      213: 5789550258529110868
+    second: Wagon2KaputtSchrebenBank_59
+  - first:
+      213: 2478629495898325749
+    second: Wagon2KaputtSchrebenBank_60
+  - first:
+      213: -5229782022066146419
+    second: Wagon2KaputtSchrebenBank_61
+  - first:
+      213: 8388913770437768385
+    second: Wagon2KaputtSchrebenBank_62
+  - first:
+      213: 505621979916590945
+    second: Wagon2KaputtSchrebenBank_63
+  - first:
+      213: -1543795646829744331
+    second: Wagon2KaputtSchrebenBank_64
+  - first:
+      213: -5233699893014259961
+    second: Wagon2KaputtSchrebenBank_65
+  - first:
+      213: -1979781233249351549
+    second: Wagon2KaputtSchrebenBank_66
+  - first:
+      213: 7156421481420197823
+    second: Wagon2KaputtSchrebenBank_67
+  - first:
+      213: -2654309724946578812
+    second: Wagon2KaputtSchrebenBank_68
+  - first:
+      213: 2000762934048647377
+    second: Wagon2KaputtSchrebenBank_69
+  - first:
+      213: 1322499182696234081
+    second: Wagon2KaputtSchrebenBank_70
+  - first:
+      213: -7291764053743743223
+    second: Wagon2KaputtSchrebenBank_71
+  - first:
+      213: -1356367462616993819
+    second: Wagon2KaputtSchrebenBank_72
+  - first:
+      213: -1361785946685157420
+    second: Wagon2KaputtSchrebenBank_73
+  - first:
+      213: 8332332114795200121
+    second: Wagon2KaputtSchrebenBank_74
+  - first:
+      213: 810763839340109460
+    second: Wagon2KaputtSchrebenBank_75
+  - first:
+      213: -7701704894060248319
+    second: Wagon2KaputtSchrebenBank_76
+  - first:
+      213: -5248705514191680973
+    second: Wagon2KaputtSchrebenBank_77
+  - first:
+      213: -7693633599724251799
+    second: Wagon2KaputtSchrebenBank_78
+  - first:
+      213: -5566447753754840655
+    second: Wagon2KaputtSchrebenBank_79
+  - first:
+      213: -2047364769108854380
+    second: Wagon2KaputtSchrebenBank_80
+  - first:
+      213: 3410073980234973976
+    second: Wagon2KaputtSchrebenBank_81
+  - first:
+      213: 6439024038483250501
+    second: Wagon2KaputtSchrebenBank_82
+  - first:
+      213: 270272283862459293
+    second: Wagon2KaputtSchrebenBank_83
+  - first:
+      213: 5887539401462060494
+    second: Wagon2KaputtSchrebenBank_84
+  - first:
+      213: -1739520046495792346
+    second: Wagon2KaputtSchrebenBank_85
+  - first:
+      213: 751775330292763008
+    second: Wagon2KaputtSchrebenBank_86
+  - first:
+      213: 4426814643671247119
+    second: Wagon2KaputtSchrebenBank_87
+  - first:
+      213: -2044098087121707515
+    second: Wagon2KaputtSchrebenBank_88
+  - first:
+      213: 3599083594733656476
+    second: Wagon2KaputtSchrebenBank_89
+  - first:
+      213: -7479894267311440912
+    second: Wagon2KaputtSchrebenBank_90
+  - first:
+      213: -3423701378482197527
+    second: Wagon2KaputtSchrebenBank_91
+  - first:
+      213: 468123435466164968
+    second: Wagon2KaputtSchrebenBank_92
+  - first:
+      213: 6634903966954238945
+    second: Wagon2KaputtSchrebenBank_93
+  - first:
+      213: 8841507573881095385
+    second: Wagon2KaputtSchrebenBank_94
+  - first:
+      213: 6596593222989911252
+    second: Wagon2KaputtSchrebenBank_95
+  - first:
+      213: -945214262445900120
+    second: Wagon2KaputtSchrebenBank_96
+  - first:
+      213: -7711930662930109275
+    second: Wagon2KaputtSchrebenBank_97
+  - first:
+      213: 3675965047008210162
+    second: Wagon2KaputtSchrebenBank_98
+  - first:
+      213: -6456375497959944902
+    second: Wagon2KaputtSchrebenBank_99
+  - first:
+      213: -1181372669543479180
+    second: Wagon2KaputtSchrebenBank_100
+  - first:
+      213: -7314770432699363473
+    second: Wagon2KaputtSchrebenBank_101
+  - first:
+      213: -93900104225202078
+    second: Wagon2KaputtSchrebenBank_102
+  - first:
+      213: 6253935609128790857
+    second: Wagon2KaputtSchrebenBank_103
+  - first:
+      213: -8461204924938855011
+    second: Wagon2KaputtSchrebenBank_104
+  - first:
+      213: -1474080914356459485
+    second: Wagon2KaputtSchrebenBank_105
+  - first:
+      213: -1145328325158966786
+    second: Wagon2KaputtSchrebenBank_106
+  - first:
+      213: 4801268990261616438
+    second: Wagon2KaputtSchrebenBank_107
+  - first:
+      213: 7053529224636720913
+    second: Wagon2KaputtSchrebenBank_108
+  - first:
+      213: 8313740575660781779
+    second: Wagon2KaputtSchrebenBank_109
+  - first:
+      213: -1813372617083017632
+    second: Wagon2KaputtSchrebenBank_110
+  - first:
+      213: -8465380072848808377
+    second: Wagon2KaputtSchrebenBank_111
+  - first:
+      213: 8922566543945098924
+    second: Wagon2KaputtSchrebenBank_112
+  - first:
+      213: -4256235800444176614
+    second: Wagon2KaputtSchrebenBank_113
+  - first:
+      213: 5596958696381132259
+    second: Wagon2KaputtSchrebenBank_114
+  - first:
+      213: 7687176248850634100
+    second: Wagon2KaputtSchrebenBank_115
+  - first:
+      213: -941500085044399297
+    second: Wagon2KaputtSchrebenBank_116
+  - first:
+      213: -8259433387511699121
+    second: Wagon2KaputtSchrebenBank_117
+  - first:
+      213: -5566014722144989037
+    second: Wagon2KaputtSchrebenBank_118
+  - first:
+      213: -5545382933345274182
+    second: Wagon2KaputtSchrebenBank_119
+  - first:
+      213: 4336205909984371980
+    second: Wagon2KaputtSchrebenBank_120
+  - first:
+      213: -4999552963892561575
+    second: Wagon2KaputtSchrebenBank_121
+  - first:
+      213: -2508096455393867625
+    second: Wagon2KaputtSchrebenBank_122
+  - first:
+      213: -1714762754265450976
+    second: Wagon2KaputtSchrebenBank_123
+  - first:
+      213: 7653939819175525262
+    second: Wagon2KaputtSchrebenBank_124
+  - first:
+      213: 6176428822605876617
+    second: Wagon2KaputtSchrebenBank_125
+  - first:
+      213: -8146861425518315623
+    second: Wagon2KaputtSchrebenBank_126
+  - first:
+      213: -3251848111553242284
+    second: Wagon2KaputtSchrebenBank_127
+  - first:
+      213: 8910047396576619787
+    second: Wagon2KaputtSchrebenBank_128
+  - first:
+      213: -1329047415591850062
+    second: Wagon2KaputtSchrebenBank_129
+  - first:
+      213: 8466321578251337069
+    second: Wagon2KaputtSchrebenBank_130
+  - first:
+      213: -6772311246723056685
+    second: Wagon2KaputtSchrebenBank_131
+  - first:
+      213: 4900594183800840820
+    second: Wagon2KaputtSchrebenBank_132
+  - first:
+      213: 5351662710736195416
+    second: Wagon2KaputtSchrebenBank_133
+  - first:
+      213: 6347058355484148123
+    second: Wagon2KaputtSchrebenBank_134
+  - first:
+      213: 2873372767180658325
+    second: Wagon2KaputtSchrebenBank_135
+  - first:
+      213: 7222778571804838862
+    second: Wagon2KaputtSchrebenBank_136
+  - first:
+      213: -8362967708328764513
+    second: Wagon2KaputtSchrebenBank_137
+  - first:
+      213: 5912345744382562210
+    second: Wagon2KaputtSchrebenBank_138
+  - first:
+      213: -534481464883009294
+    second: Wagon2KaputtSchrebenBank_139
+  - first:
+      213: -1562630156122163438
+    second: Wagon2KaputtSchrebenBank_140
+  - first:
+      213: -8905109706288262115
+    second: Wagon2KaputtSchrebenBank_141
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58397a778090d8d30800000000000000
+      internalID: 4435211140001665925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_1
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 367
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a366aa9d5751b70800000000000000
+      internalID: 8869124618903239276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_2
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 374
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0a32ab465523110800000000000000
+      internalID: 1239146738588295341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_3
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 367
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a6b17996421ba90800000000000000
+      internalID: -7300013485065541072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_4
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 374
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d891c20daab42f50800000000000000
+      internalID: 6855809785003088084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_5
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 319
+        width: 73
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300fdb99c855444f0800000000000000
+      internalID: -845456767675666429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_6
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 354
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3834f2a22a7f96410800000000000000
+      internalID: 1470979029177680771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_7
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 350
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59f1fb8d675af5150800000000000000
+      internalID: 5863587169720803221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_8
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 348
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4bcd74e78fb88c80800000000000000
+      internalID: -8320189721192051891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_9
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 338
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f4ad0dba4d39de0800000000000000
+      internalID: -1327483630735700183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_10
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 297
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95173d3d079d4e890800000000000000
+      internalID: -7429574406641061543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_11
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 333
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1204f881c6ec0660800000000000000
+      internalID: 7353506010489946652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_12
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 337
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b685fd48b2537f020800000000000000
+      internalID: 2375425789490321515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_13
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 331
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb4b2734c2729a20800000000000000
+      internalID: 3067640483257469917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_14
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 336
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d537344f31bdb10800000000000000
+      internalID: 2007219998748269914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_15
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 331
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852416b4a33b9fdb0800000000000000
+      internalID: -4757574468386078120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_16
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 325
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7753dfcc58f8a1740800000000000000
+      internalID: 5123565330919929207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_17
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 313
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94c778c1985085e0800000000000000
+      internalID: -1909428858848295780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_18
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 308
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1ac0a5d01752300800000000000000
+      internalID: 226711658411368906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_19
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 318
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657864dcbce19fdb0800000000000000
+      internalID: -4757737670669072554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_20
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 313
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22391bd57ddc2b640800000000000000
+      internalID: 5094360453383033634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_21
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 310
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db6b1055cb011ef0800000000000000
+      internalID: -139317171391337520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_22
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081241f244da23680800000000000000
+      internalID: -8776762215432445568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_23
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 308
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc04393d0d9a073b0800000000000000
+      internalID: -5516722829160922931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_24
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 293
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc09aa730a1cb0d0800000000000000
+      internalID: -3405818615953814319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_25
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 300
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403c85af3455a1420800000000000000
+      internalID: 2601485485211173636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_26
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 277
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acda0cee7c63661e0800000000000000
+      internalID: -2205014735219282486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_27
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 296
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731063cf302e756e0800000000000000
+      internalID: -1848760615268122313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_28
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 284
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00b0a6ddb6802c980800000000000000
+      internalID: -8520238285662319872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_29
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 288
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ede44e8efddf93a0800000000000000
+      internalID: -6656357638851990041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_30
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 284
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc70e05afa40a610800000000000000
+      internalID: 1630385504067288267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_31
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 297
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe3d3fb4edd81170800000000000000
+      internalID: 8149507500257656560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_32
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 276
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1387be0f2dd4a2a0800000000000000
+      internalID: -6727008749204569313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_33
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 274
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e1c8ff2949546a0800000000000000
+      internalID: -6465598330946969986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_34
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 281
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 082faed70a2c1e860800000000000000
+      internalID: 7557535644267508352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_35
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 258
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2892fdd4c415b74b0800000000000000
+      internalID: -5441666336581277310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_36
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 265
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b868673312688f0800000000000000
+      internalID: -538706600508617832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_37
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 284
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425263895fc5e37d0800000000000000
+      internalID: -2936807697108556508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_38
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 284
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34312eb131546eb0800000000000000
+      internalID: -4727564434747083714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_39
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 275
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62f0cdcceccc6060800000000000000
+      internalID: 6948153642562155118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_40
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 226
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592461be1bf6e1730800000000000000
+      internalID: 3971734731331355285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_41
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 248
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7f540605c564310800000000000000
+      internalID: 1388899035372713888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_42
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 260
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce1011cef3e2f86b0800000000000000
+      internalID: -5291960185058688532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_43
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 255
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a04359b71bfa460800000000000000
+      internalID: 7255212669059467857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_44
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 253
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ec2852c2f99fdc0800000000000000
+      internalID: -3604675014776664426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_45
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 254
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d4e76a14f4b48b0800000000000000
+      internalID: -5166949004092748442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_46
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 244
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4434ab4ba2dd0270800000000000000
+      internalID: 8218456528171316300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_47
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 255
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5407f09f0fcdd970800000000000000
+      internalID: 8781402514205901919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_48
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 252
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667ff0c1107e11620800000000000000
+      internalID: 2743227639997134694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_49
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 262
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd33d2390d55eea0800000000000000
+      internalID: -5844162647354556989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_50
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 250
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b48b23b78e5cebe60800000000000000
+      internalID: 7980033192037103691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_51
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 253
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc66c6cae53dfb50800000000000000
+      internalID: 6628513509032750277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_52
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 245
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91448ec3170ce2bb0800000000000000
+      internalID: -4958814547102645223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_53
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 238
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0244501cb301317b0800000000000000
+      internalID: -5254838491383774176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_54
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 226
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: affd43750da827500800000000000000
+      internalID: 392528744955568122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_55
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 228
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22db73738ab3d59b0800000000000000
+      internalID: -5089846410191848158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_56
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 190
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473fdef3cc1368c30800000000000000
+      internalID: 4361228042470552436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_57
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 235
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 092ec575279296b10800000000000000
+      internalID: 1975155482647388816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_58
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 216
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765b8d4c4dff1be30800000000000000
+      internalID: 4517673190530004327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_59
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 214
+        width: 39
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b06e8294d985050800000000000000
+      internalID: 5789550258529110868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_60
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 208
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f243d8e46cd56220800000000000000
+      internalID: 2478629495898325749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_61
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 207
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83f502a5f41c67b0800000000000000
+      internalID: -5229782022066146419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_62
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 218
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c4735ab0a86b6470800000000000000
+      internalID: 8388913770437768385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_63
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 207
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fde870384540700800000000000000
+      internalID: 505621979916590945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_64
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 163
+        width: 59
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f2be0e906539ae0800000000000000
+      internalID: -1543795646829744331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_65
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 198
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70792e73da92e57b0800000000000000
+      internalID: -5233699893014259961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_66
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 209
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388003b25776684e0800000000000000
+      internalID: -1979781233249351549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_67
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 193
+        width: 36
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf8607cb67b05360800000000000000
+      internalID: 7156421481420197823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_68
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 185
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 482c1b84e5ff92bd0800000000000000
+      internalID: -2654309724946578812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_69
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 139
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8ecbbb94324cb10800000000000000
+      internalID: 2000762934048647377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_70
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 192
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c7a50fff57a5210800000000000000
+      internalID: 1322499182696234081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_71
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 192
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f44aef9337eca90800000000000000
+      internalID: -7291764053743743223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_72
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 128
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efe0d5aaf63d2de0800000000000000
+      internalID: -1356367462616993819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_73
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 178
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df46b385e6f91de0800000000000000
+      internalID: -1361785946685157420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_74
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 181
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e72fc69e362a370800000000000000
+      internalID: 8332332114795200121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_75
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 166
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e59909a69604b00800000000000000
+      internalID: 810763839340109460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_76
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 164
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103c6a8443c0e1590800000000000000
+      internalID: -7701704894060248319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_77
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 174
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a88f7c42ad827b0800000000000000
+      internalID: -5248705514191680973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_78
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 166
+        width: 7
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9651d60f009ba3590800000000000000
+      internalID: -7693633599724251799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_79
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 176
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1fba0a24100c2b0800000000000000
+      internalID: -5566447753754840655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_80
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 129
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499fd93079c4693e0800000000000000
+      internalID: -2047364769108854380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_81
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 165
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81345b9b734035f20800000000000000
+      internalID: 3410073980234973976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_82
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 114
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54dcef16f320c5950800000000000000
+      internalID: 6439024038483250501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_83
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 161
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d936140d53330c300800000000000000
+      internalID: 270272283862459293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_84
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 86
+        width: 53
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5134164edb4b150800000000000000
+      internalID: 5887539401462060494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_85
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 142
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62382fcebbbfbd7e0800000000000000
+      internalID: -1739520046495792346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_86
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 148
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08980090ea7de6a00800000000000000
+      internalID: 751775330292763008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_87
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 148
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09a582d6743f6d30800000000000000
+      internalID: 4426814643671247119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_88
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 140
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e1e0fae97e1a3e0800000000000000
+      internalID: -2044098087121707515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_89
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 143
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99190de57382f130800000000000000
+      internalID: 3599083594733656476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_90
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 126
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fbbb674bc3123890800000000000000
+      internalID: -7479894267311440912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_91
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 152
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebad8e5cb19c70d0800000000000000
+      internalID: -3423701378482197527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_92
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 75
+        width: 43
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea0ff9c8cb1f7600800000000000000
+      internalID: 468123435466164968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_93
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 138
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e33325310ae31c50800000000000000
+      internalID: 6634903966954238945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_94
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 115
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4cb1c4b4853ba70800000000000000
+      internalID: 8841507573881095385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_95
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 122
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d41018069ecb8b50800000000000000
+      internalID: 6596593222989911252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_96
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 91
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae7742e2ace1e2f0800000000000000
+      internalID: -945214262445900120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_97
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 105
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5acab9febe7b9f490800000000000000
+      internalID: -7711930662930109275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_98
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 96
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc2da1fbb6a30330800000000000000
+      internalID: 3675965047008210162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_99
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 102
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3dcf8321b85666a0800000000000000
+      internalID: -6456375497959944902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_100
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 87
+        width: 6
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4788184f0dbea9fe0800000000000000
+      internalID: -1181372669543479180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_101
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 99
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f8c69fb07bc7a90800000000000000
+      internalID: -7314770432699363473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_102
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 95
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 260e84b4a5662bef0800000000000000
+      internalID: -93900104225202078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_103
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 99
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ba94e3d417ac650800000000000000
+      internalID: 6253935609128790857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_104
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 84
+        width: 37
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9ddb3d33f2c39a80800000000000000
+      internalID: -8461204924938855011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_105
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 86
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328a999e7330b8be0800000000000000
+      internalID: -1474080914356459485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_106
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 93
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9e4bbd4f9fa10f0800000000000000
+      internalID: -1145328325158966786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_107
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 86
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f54ab55b881a240800000000000000
+      internalID: 4801268990261616438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_108
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 74
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117ee47657b23e160800000000000000
+      internalID: 7053529224636720913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_109
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 84
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d033076107506370800000000000000
+      internalID: 8313740575660781779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_110
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 066a851663b95d6e0800000000000000
+      internalID: -1813372617083017632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_111
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 65
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7462d2ddcade48a80800000000000000
+      internalID: -8465380072848808377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_112
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 71
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6e1a87ff253db70800000000000000
+      internalID: 8922566543945098924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_113
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 61
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a17793a0710dee4c0800000000000000
+      internalID: -4256235800444176614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_114
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 64
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eda458c7446cad40800000000000000
+      internalID: 5596958696381132259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_115
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 31
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475df86e1165eaa60800000000000000
+      internalID: 7687176248850634100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_116
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 9
+        width: 28
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33bde239ae1fe2f0800000000000000
+      internalID: -941500085044399297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_117
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 49
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f492d5b2819906d80800000000000000
+      internalID: -8259433387511699121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_118
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 49
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39014f7a91b81c2b0800000000000000
+      internalID: -5566014722144989037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_119
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 23
+        width: 50
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab6f0725a97da03b0800000000000000
+      internalID: -5545382933345274182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_120
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 43
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0561990d4c4d2c30800000000000000
+      internalID: 4336205909984371980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_121
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 55
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959be6f61150e9ab0800000000000000
+      internalID: -4999552963892561575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_122
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79805d1ff83713dd0800000000000000
+      internalID: -2508096455393867625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_123
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 29
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026ffe53c50f338e0800000000000000
+      internalID: -1714762754265450976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_124
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 36
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8bbc2696b1483a60800000000000000
+      internalID: 7653939819175525262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_125
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 23
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d48ef3a4517b550800000000000000
+      internalID: 6176428822605876617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_126
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 38
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997f5a982b880fe80800000000000000
+      internalID: -8146861425518315623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_127
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 24
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b185f1f5d1fd2d0800000000000000
+      internalID: -3251848111553242284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_128
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 20
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0de7d456e8d6ab70800000000000000
+      internalID: 8910047396576619787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_129
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 28
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf2ff7ca664e8de0800000000000000
+      internalID: -1329047415591850062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_130
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 0
+        width: 49
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d35e17e9a6e7570800000000000000
+      internalID: 8466321578251337069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_131
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 26
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db70b66dcae302a0800000000000000
+      internalID: -6772311246723056685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_132
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 0
+        width: 51
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4726bc91278620440800000000000000
+      internalID: 4900594183800840820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_133
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 0
+        width: 63
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f822f81ece44a40800000000000000
+      internalID: 5351662710736195416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_134
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 5
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91ce4732f7451850800000000000000
+      internalID: 6347058355484148123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_135
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 13
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5969517de4540e720800000000000000
+      internalID: 2873372767180658325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_136
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 17
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb0bb7d7d67c3460800000000000000
+      internalID: 7222778571804838862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_137
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 12
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b500d9d25c0fb80800000000000000
+      internalID: -8362967708328764513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_138
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 7
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af073b212fdc0250800000000000000
+      internalID: 5912345744382562210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_139
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 8
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f82e9280f32598f0800000000000000
+      internalID: -534481464883009294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_140
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 0
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2177605f62c605ae0800000000000000
+      internalID: -1562630156122163438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wagon2KaputtSchrebenBank_141
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d141ec647e1ba6480800000000000000
+      internalID: -8905109706288262115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Wagon2KaputtSchrebenBank_0: 4435211140001665925
+      Wagon2KaputtSchrebenBank_1: 8869124618903239276
+      Wagon2KaputtSchrebenBank_10: -7429574406641061543
+      Wagon2KaputtSchrebenBank_100: -1181372669543479180
+      Wagon2KaputtSchrebenBank_101: -7314770432699363473
+      Wagon2KaputtSchrebenBank_102: -93900104225202078
+      Wagon2KaputtSchrebenBank_103: 6253935609128790857
+      Wagon2KaputtSchrebenBank_104: -8461204924938855011
+      Wagon2KaputtSchrebenBank_105: -1474080914356459485
+      Wagon2KaputtSchrebenBank_106: -1145328325158966786
+      Wagon2KaputtSchrebenBank_107: 4801268990261616438
+      Wagon2KaputtSchrebenBank_108: 7053529224636720913
+      Wagon2KaputtSchrebenBank_109: 8313740575660781779
+      Wagon2KaputtSchrebenBank_11: 7353506010489946652
+      Wagon2KaputtSchrebenBank_110: -1813372617083017632
+      Wagon2KaputtSchrebenBank_111: -8465380072848808377
+      Wagon2KaputtSchrebenBank_112: 8922566543945098924
+      Wagon2KaputtSchrebenBank_113: -4256235800444176614
+      Wagon2KaputtSchrebenBank_114: 5596958696381132259
+      Wagon2KaputtSchrebenBank_115: 7687176248850634100
+      Wagon2KaputtSchrebenBank_116: -941500085044399297
+      Wagon2KaputtSchrebenBank_117: -8259433387511699121
+      Wagon2KaputtSchrebenBank_118: -5566014722144989037
+      Wagon2KaputtSchrebenBank_119: -5545382933345274182
+      Wagon2KaputtSchrebenBank_12: 2375425789490321515
+      Wagon2KaputtSchrebenBank_120: 4336205909984371980
+      Wagon2KaputtSchrebenBank_121: -4999552963892561575
+      Wagon2KaputtSchrebenBank_122: -2508096455393867625
+      Wagon2KaputtSchrebenBank_123: -1714762754265450976
+      Wagon2KaputtSchrebenBank_124: 7653939819175525262
+      Wagon2KaputtSchrebenBank_125: 6176428822605876617
+      Wagon2KaputtSchrebenBank_126: -8146861425518315623
+      Wagon2KaputtSchrebenBank_127: -3251848111553242284
+      Wagon2KaputtSchrebenBank_128: 8910047396576619787
+      Wagon2KaputtSchrebenBank_129: -1329047415591850062
+      Wagon2KaputtSchrebenBank_13: 3067640483257469917
+      Wagon2KaputtSchrebenBank_130: 8466321578251337069
+      Wagon2KaputtSchrebenBank_131: -6772311246723056685
+      Wagon2KaputtSchrebenBank_132: 4900594183800840820
+      Wagon2KaputtSchrebenBank_133: 5351662710736195416
+      Wagon2KaputtSchrebenBank_134: 6347058355484148123
+      Wagon2KaputtSchrebenBank_135: 2873372767180658325
+      Wagon2KaputtSchrebenBank_136: 7222778571804838862
+      Wagon2KaputtSchrebenBank_137: -8362967708328764513
+      Wagon2KaputtSchrebenBank_138: 5912345744382562210
+      Wagon2KaputtSchrebenBank_139: -534481464883009294
+      Wagon2KaputtSchrebenBank_14: 2007219998748269914
+      Wagon2KaputtSchrebenBank_140: -1562630156122163438
+      Wagon2KaputtSchrebenBank_141: -8905109706288262115
+      Wagon2KaputtSchrebenBank_15: -4757574468386078120
+      Wagon2KaputtSchrebenBank_16: 5123565330919929207
+      Wagon2KaputtSchrebenBank_17: -1909428858848295780
+      Wagon2KaputtSchrebenBank_18: 226711658411368906
+      Wagon2KaputtSchrebenBank_19: -4757737670669072554
+      Wagon2KaputtSchrebenBank_2: 1239146738588295341
+      Wagon2KaputtSchrebenBank_20: 5094360453383033634
+      Wagon2KaputtSchrebenBank_21: -139317171391337520
+      Wagon2KaputtSchrebenBank_22: -8776762215432445568
+      Wagon2KaputtSchrebenBank_23: -5516722829160922931
+      Wagon2KaputtSchrebenBank_24: -3405818615953814319
+      Wagon2KaputtSchrebenBank_25: 2601485485211173636
+      Wagon2KaputtSchrebenBank_26: -2205014735219282486
+      Wagon2KaputtSchrebenBank_27: -1848760615268122313
+      Wagon2KaputtSchrebenBank_28: -8520238285662319872
+      Wagon2KaputtSchrebenBank_29: -6656357638851990041
+      Wagon2KaputtSchrebenBank_3: -7300013485065541072
+      Wagon2KaputtSchrebenBank_30: 1630385504067288267
+      Wagon2KaputtSchrebenBank_31: 8149507500257656560
+      Wagon2KaputtSchrebenBank_32: -6727008749204569313
+      Wagon2KaputtSchrebenBank_33: -6465598330946969986
+      Wagon2KaputtSchrebenBank_34: 7557535644267508352
+      Wagon2KaputtSchrebenBank_35: -5441666336581277310
+      Wagon2KaputtSchrebenBank_36: -538706600508617832
+      Wagon2KaputtSchrebenBank_37: -2936807697108556508
+      Wagon2KaputtSchrebenBank_38: -4727564434747083714
+      Wagon2KaputtSchrebenBank_39: 6948153642562155118
+      Wagon2KaputtSchrebenBank_4: 6855809785003088084
+      Wagon2KaputtSchrebenBank_40: 3971734731331355285
+      Wagon2KaputtSchrebenBank_41: 1388899035372713888
+      Wagon2KaputtSchrebenBank_42: -5291960185058688532
+      Wagon2KaputtSchrebenBank_43: 7255212669059467857
+      Wagon2KaputtSchrebenBank_44: -3604675014776664426
+      Wagon2KaputtSchrebenBank_45: -5166949004092748442
+      Wagon2KaputtSchrebenBank_46: 8218456528171316300
+      Wagon2KaputtSchrebenBank_47: 8781402514205901919
+      Wagon2KaputtSchrebenBank_48: 2743227639997134694
+      Wagon2KaputtSchrebenBank_49: -5844162647354556989
+      Wagon2KaputtSchrebenBank_5: -845456767675666429
+      Wagon2KaputtSchrebenBank_50: 7980033192037103691
+      Wagon2KaputtSchrebenBank_51: 6628513509032750277
+      Wagon2KaputtSchrebenBank_52: -4958814547102645223
+      Wagon2KaputtSchrebenBank_53: -5254838491383774176
+      Wagon2KaputtSchrebenBank_54: 392528744955568122
+      Wagon2KaputtSchrebenBank_55: -5089846410191848158
+      Wagon2KaputtSchrebenBank_56: 4361228042470552436
+      Wagon2KaputtSchrebenBank_57: 1975155482647388816
+      Wagon2KaputtSchrebenBank_58: 4517673190530004327
+      Wagon2KaputtSchrebenBank_59: 5789550258529110868
+      Wagon2KaputtSchrebenBank_6: 1470979029177680771
+      Wagon2KaputtSchrebenBank_60: 2478629495898325749
+      Wagon2KaputtSchrebenBank_61: -5229782022066146419
+      Wagon2KaputtSchrebenBank_62: 8388913770437768385
+      Wagon2KaputtSchrebenBank_63: 505621979916590945
+      Wagon2KaputtSchrebenBank_64: -1543795646829744331
+      Wagon2KaputtSchrebenBank_65: -5233699893014259961
+      Wagon2KaputtSchrebenBank_66: -1979781233249351549
+      Wagon2KaputtSchrebenBank_67: 7156421481420197823
+      Wagon2KaputtSchrebenBank_68: -2654309724946578812
+      Wagon2KaputtSchrebenBank_69: 2000762934048647377
+      Wagon2KaputtSchrebenBank_7: 5863587169720803221
+      Wagon2KaputtSchrebenBank_70: 1322499182696234081
+      Wagon2KaputtSchrebenBank_71: -7291764053743743223
+      Wagon2KaputtSchrebenBank_72: -1356367462616993819
+      Wagon2KaputtSchrebenBank_73: -1361785946685157420
+      Wagon2KaputtSchrebenBank_74: 8332332114795200121
+      Wagon2KaputtSchrebenBank_75: 810763839340109460
+      Wagon2KaputtSchrebenBank_76: -7701704894060248319
+      Wagon2KaputtSchrebenBank_77: -5248705514191680973
+      Wagon2KaputtSchrebenBank_78: -7693633599724251799
+      Wagon2KaputtSchrebenBank_79: -5566447753754840655
+      Wagon2KaputtSchrebenBank_8: -8320189721192051891
+      Wagon2KaputtSchrebenBank_80: -2047364769108854380
+      Wagon2KaputtSchrebenBank_81: 3410073980234973976
+      Wagon2KaputtSchrebenBank_82: 6439024038483250501
+      Wagon2KaputtSchrebenBank_83: 270272283862459293
+      Wagon2KaputtSchrebenBank_84: 5887539401462060494
+      Wagon2KaputtSchrebenBank_85: -1739520046495792346
+      Wagon2KaputtSchrebenBank_86: 751775330292763008
+      Wagon2KaputtSchrebenBank_87: 4426814643671247119
+      Wagon2KaputtSchrebenBank_88: -2044098087121707515
+      Wagon2KaputtSchrebenBank_89: 3599083594733656476
+      Wagon2KaputtSchrebenBank_9: -1327483630735700183
+      Wagon2KaputtSchrebenBank_90: -7479894267311440912
+      Wagon2KaputtSchrebenBank_91: -3423701378482197527
+      Wagon2KaputtSchrebenBank_92: 468123435466164968
+      Wagon2KaputtSchrebenBank_93: 6634903966954238945
+      Wagon2KaputtSchrebenBank_94: 8841507573881095385
+      Wagon2KaputtSchrebenBank_95: 6596593222989911252
+      Wagon2KaputtSchrebenBank_96: -945214262445900120
+      Wagon2KaputtSchrebenBank_97: -7711930662930109275
+      Wagon2KaputtSchrebenBank_98: 3675965047008210162
+      Wagon2KaputtSchrebenBank_99: -6456375497959944902
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

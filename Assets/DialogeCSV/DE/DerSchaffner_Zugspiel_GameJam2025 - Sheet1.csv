@@ -1,6 +1,6 @@
 memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
 conductor_intro,1,,Der Zugschaffner. Er sieht müde aus. ,,,,,,,,,,,,,
-conductor_crash,2,,,,first_train_crash,"„Hatten wir einen Unfall? Was ist passiert?""","„Unfall? Mir ist nicjts aufgefallen.""",,,,,,,,,
+conductor_crash,2,,,,first_train_crash,"„Hatten wir einen Unfall? Was ist passiert?""","„Unfall? Mir ist nichts aufgefallen.""",,,,,,,,,
 conductor_coffee,3,,,,spilled_coffee,"„Haben Sie gesehen, warum der Thermobecher umgekippt ist?""","„Ich habe nichts bemerkt.""",,spilled_coffee,„Gehört der Thermobecher Ihnen?,"„Nein. Mir gehört der Becher nicht.""",,boozed_coffe," „Waum ist Alkohol im Kaffee?"""," „Junger Mann, ich trinke nicht während meiner Arbeitszeit.""",
 conductor_nochange,4,,,,,,,,,,,,,,,
 conductor_ticket,5,,,,ticket_name,„Wissen Sie welchem Passagier dieses Ticket gehört?“,„Nein. Aber es ist noch nicht abgestempelt wurden. ,ticket_not_stamped,,,,,,,,
