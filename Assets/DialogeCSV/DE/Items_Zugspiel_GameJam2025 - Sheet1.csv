@@ -4,8 +4,8 @@ coffeecup_sunflower,1,,Ein Thermo becher mit gelben Sonnenblumen drauf.,coffee_h
 ticket_empty,1,,Ein leeres Zugticket. ,
 window_rain,1,,Ein Fenster. Es regenet drauße,
 window2_rain,1,,Es regenet immer noch drauße,
-window_moonlight,1,,"Schönes Mondlicht, oder geht dort in der ferne schon die Sonne auf? Leider kann ich das von hier nicht wirklich erkennen.",
-window2_moonlight,1,,"Schönes Mondlicht, oder geht dort in der ferne schon die Sonne auf? Leider kann ich das von hier nicht wirklich erkennen.",
+window3_moonlight,1,,"Schönes Mondlicht, oder geht dort in der ferne schon die Sonne auf? Leider kann ich das von hier nicht wirklich erkennen.",
+window4_moonlight,1,,"Schönes Mondlicht, oder geht dort in der ferne schon die Sonne auf? Leider kann ich das von hier nicht wirklich erkennen.",
 koffer_random,1,,"Nur ein Koffer, gehört vielleicht einen der Passagiere",
 koffer2_random,1,,"Nur ein Koffer, gehört vielleicht einen der Passagiere",
 light_off,1,,Natürlich ist die Lampe über den grusiligen Mann defekt.,
@@ -22,7 +22,7 @@ ticket_name,4,spilled_coffee,Auf dem Ticket steht: Thomasen Schmidt.,ticket_name
 window_face,6,,Was war das für ein Gesicht? Wo kam es her,window_face_reveal
 window_coffeecup,8,,Ist der Thermobecher gerade durch das Fenster geflogen?,window_broken
 window2_coffeecup,8,,Ist der Thermobecher gerade durch das Fenster geflogen?,window_broken
-loop_last,9,,Jetzt verstehe ich. Thomasen starb in einem Zugunglück. Weil er nach dem Thermobecher grifen hat,
-mirrow_fixed,10,fixed_mirrow,Der Spiegel ist wieder heile. Wie ist das möglich,all_memorys_collected
-mirrow_face,10,all_memorys_collected,"Das Gesicht des Fremnden im Spiegel. Warte nein es ist mein Gesicht. Ich bin Thomasen Schmidt. Ich starb, weil ich nach dem Thermobecher griff. Ich bin tod.. Ich war es die ganze Zeit schon.",i_am_thomasen
-door_open,10,i_am_thomasen,Jetzt bin bereit. Endlich kann ich loslassen. ,
+loop_last,10,,Jetzt verstehe ich. Thomasen starb in einem Zugunglück. Weil er nach dem Thermobecher grifen hat,fixed_mirrow
+mirrow_fixed,11,fixed_mirrow,Der Spiegel ist wieder heile. Wie ist das möglich,all_memorys_collected
+mirrow_face,11,all_memorys_collected,"Das Gesicht des Fremnden im Spiegel. Warte nein es ist mein Gesicht. Ich bin Thomasen Schmidt. Ich starb, weil ich nach dem Thermobecher griff. Ich bin tod.. Ich war es die ganze Zeit schon.",i_am_thomasen
+door2_open,11,i_am_thomasen,Jetzt bin bereit. Endlich kann ich loslassen. ,

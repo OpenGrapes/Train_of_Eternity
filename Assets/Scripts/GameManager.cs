@@ -80,6 +80,18 @@ public class GameManager : MonoBehaviour
     
     [Header("Game State")]
     public int currentLoopCount = 1; // Aktueller Spielloop
+
+        [Header("Sternschnuppen-Nacht System")]
+        [Tooltip("GameObject für Sternschnuppen-Nacht (im Inspector zuweisen)")]
+        public GameObject sternschnuppenNacht;
+        [Tooltip("Min Loop für Sternschnuppen-Nacht")]
+        public int minLoop = 1;
+        [Tooltip("Max Loop für Sternschnuppen-Nacht")]
+        public int maxLoop = 3;
+
+        private int triggerLoop = -1;
+        private bool sternschnuppenNachtTriggered = false;
+        private bool sternschnuppenNachtDeactivated = false;
     
     [Header("Player Settings")]
     // === PLAYER DATA ===
@@ -181,6 +193,7 @@ public class GameManager : MonoBehaviour
             RegisterAllItems();
             InitializeLoopProgressionSystem();
             InitializeWindow2System();
+                InitializeSternschnuppenNacht();
         }
         else
         {
@@ -310,6 +323,49 @@ public class GameManager : MonoBehaviour
         {
             CheckWindow2ImageSwitch();
             CheckBackgroundMusicState();
+        }
+
+            CheckSternschnuppenNacht();
+    }
+    // Initialisiert das Sternschnuppen-Nacht-System
+    private void InitializeSternschnuppenNacht()
+    {
+        sternschnuppenNachtTriggered = false;
+        sternschnuppenNachtDeactivated = false;
+        if (sternschnuppenNacht != null)
+        {
+            sternschnuppenNacht.SetActive(false);
+        }
+        // Zufallszahl für Trigger bestimmen
+        triggerLoop = UnityEngine.Random.Range(minLoop, maxLoop + 1);
+        if (showDebugLogs)
+        {
+            Debug.Log($"[SternschnuppenNacht] TriggerLoop gewählt: {triggerLoop} (min: {minLoop}, max: {maxLoop})");
+        }
+    }
+
+    // Überwacht und steuert die Aktivierung/Deaktivierung der Sternschnuppen-Nacht
+    private void CheckSternschnuppenNacht()
+    {
+        if (sternschnuppenNacht == null || sternschnuppenNachtDeactivated) return;
+
+        if (!sternschnuppenNachtTriggered && currentLoopCount == triggerLoop)
+        {
+            sternschnuppenNacht.SetActive(true);
+            sternschnuppenNachtTriggered = true;
+            if (showDebugLogs)
+            {
+                Debug.Log($"[SternschnuppenNacht] Aktiviert bei Loop {currentLoopCount}");
+            }
+        }
+        else if (sternschnuppenNachtTriggered && currentLoopCount > triggerLoop)
+        {
+            sternschnuppenNacht.SetActive(false);
+            sternschnuppenNachtDeactivated = true;
+            if (showDebugLogs)
+            {
+                Debug.Log($"[SternschnuppenNacht] Deaktiviert bei Loop {currentLoopCount}");
+            }
         }
     }
     
@@ -2135,11 +2191,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("=== LOOP-VALIDIERUNG STARTET ===");
         Debug.Log($"Aktueller Loop: {currentLoopCount}");
         Debug.Log($"Memories in diesem Loop gefunden: {memoriesFoundInCurrentLoop.Count} [{string.Join(", ", memoriesFoundInCurrentLoop)}]");
-        
-        // SPEZIELLE REGEL: Loop 1 und 2 sind immer gültig (keine Memory-Anforderungen)
-        if (currentLoopCount == 1 || currentLoopCount == 2)
+
+        // SPEZIELLE REGEL: Loop 1, 2, 9 und 10 sind immer gültig (keine Memory-Anforderungen)
+        if (currentLoopCount == 1 || currentLoopCount == 2 || currentLoopCount == 9 || currentLoopCount == 10)
         {
-            Debug.Log($"✅ LOOP {currentLoopCount} AUTOMATISCH GÜLTIG: Loop 1 und 2 haben keine Memory-Anforderungen");
+            Debug.Log($"✅ LOOP {currentLoopCount} AUTOMATISCH GÜLTIG: Loop 1, 2, 9 und 10 haben keine Memory-Anforderungen");
             return true;
         }
         

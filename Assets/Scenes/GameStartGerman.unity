@@ -2482,7 +2482,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: e8deb90db66f1a74e842ccacc2b7ae80, type: 3}
   m_Resource: {fileID: 8300000, guid: e8deb90db66f1a74e842ccacc2b7ae80, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2911,7 +2911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &559118582
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3393,7 +3393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: window2_moonlight
+  itemId: window4_moonlight
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!65 &692867407
@@ -4345,7 +4345,8 @@ GameObject:
   - component: {fileID: 853842823}
   - component: {fileID: 853842822}
   - component: {fileID: 853842825}
-  - component: {fileID: 853842824}
+  - component: {fileID: 853842827}
+  - component: {fileID: 853842828}
   m_Layer: 5
   m_Name: Door1
   m_TagString: Untagged
@@ -4410,19 +4411,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853842820}
   m_CullTransparentMesh: 1
---- !u!114 &853842824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853842820}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showDebugInfo: 1
 --- !u!114 &853842825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4438,6 +4426,88 @@ MonoBehaviour:
   itemId: door_closed
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
+--- !u!114 &853842827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853842820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ae89cb595ea84488ab4fd240ffad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorObject: {fileID: 853842820}
+  wagonDoorScript: {fileID: 885593371}
+--- !u!114 &853842828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853842820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 853842822}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 853842827}
+        m_TargetAssemblyTypeName: DoorChangeWagon5, Assembly-CSharp
+        m_MethodName: StartSecondClickWait
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 853842825}
+        m_TargetAssemblyTypeName: ItemInteractable, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &872506458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,6 +4599,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872506458}
   m_CullTransparentMesh: 1
+--- !u!1 &885593370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885593372}
+  - component: {fileID: 885593371}
+  - component: {fileID: 885593373}
+  m_Layer: 0
+  m_Name: WagonDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &885593371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885593370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4bcdbe344d7746b660f8bdcbccd41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebugInfo: 1
+--- !u!4 &885593372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885593370}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 922.5626, y: 549.90106, z: 83.117485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885593373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885593370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4ae89cb595ea84488ab4fd240ffad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorObject: {fileID: 0}
+  wagonDoorScript: {fileID: 0}
 --- !u!1 &955458662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4681,7 +4811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &979532209
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4698,7 +4828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.424}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -476.373, y: 250.267}
+  m_AnchoredPosition: {x: -475.9, y: 249.2}
   m_SizeDelta: {x: 55.482, y: 85.316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979532210
@@ -4757,7 +4887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4420457715379217629, guid: 00fdbc94df4bfd947a54a538175163a3, type: 3}
+  m_Sprite: {fileID: 6223742881030896246, guid: 7dd5e60da687a4043b2d652e733e925f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5672,7 +5802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: window_moonlight
+  itemId: window3_moonlight
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!65 &1179864743
@@ -5832,7 +5962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1233919349
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5849,8 +5979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 246.79, y: 162.27806}
-  m_SizeDelta: {x: 92.361, y: 85.563}
+  m_AnchoredPosition: {x: 246.82, y: 162.64}
+  m_SizeDelta: {x: 92.361, y: 85.342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1233919350
 BoxCollider:
@@ -5880,7 +6010,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233919348}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7030,6 +7160,8 @@ GameObject:
   - component: {fileID: 1567700260}
   - component: {fileID: 1567700259}
   - component: {fileID: 1567700261}
+  - component: {fileID: 1567700263}
+  - component: {fileID: 1567700262}
   m_Layer: 5
   m_Name: Door2
   m_TagString: Untagged
@@ -7106,9 +7238,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: door_open
+  itemId: door2_open
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
+--- !u!114 &1567700262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567700257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1567700259}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1567700263}
+        m_TargetAssemblyTypeName: DoorChangeNewSzene, Assembly-CSharp
+        m_MethodName: StartSecondClickWait
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1567700263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567700257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f958df29e803c74397f03fe2fabad8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneChangeObject: {fileID: 1567700257}
 --- !u!1 &1578970429
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,8 +8066,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 159.65912, y: -327.98425}
-  m_SizeDelta: {x: 47.261, y: 35.82}
+  m_AnchoredPosition: {x: 157.74, y: -329.568}
+  m_SizeDelta: {x: 53.216, y: 40.333}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1838562425
 BoxCollider:
@@ -7902,7 +8103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.79622644, g: 0.79622644, b: 0.79622644, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8008,7 +8209,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839837392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -8057,7 +8258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1849592086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8686,7 +8887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2028270699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8703,8 +8904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 246.561, y: 162.23608}
-  m_SizeDelta: {x: 92.649, y: 85.527}
+  m_AnchoredPosition: {x: 246.561, y: 162.643}
+  m_SizeDelta: {x: 92.649, y: 85.969}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &2028270700
 BoxCollider:
@@ -8734,7 +8935,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028270698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9262,7 +9463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.698, y: 450.584}
+  m_AnchoredPosition: {x: 7.698, y: 450.79996}
   m_SizeDelta: {x: 9095.441, y: 5476.527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087604243
@@ -9443,17 +9644,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104079910}
-  m_LocalRotation: {x: -0, y: -0, z: 0.03286012, w: -0.99946}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0056131994, w: -0.99998426}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6849127, y: 1.8380866, z: 1.4450366}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1454338847}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.643}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 161.62288, y: -327.59}
-  m_SizeDelta: {x: 50.234, y: 27.552}
+  m_AnchoredPosition: {x: 160.843, y: -327.763}
+  m_SizeDelta: {x: 62.512, y: 34.285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &2104079912
 BoxCollider:
@@ -9666,6 +9867,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLoopCount: 1
+  sternschnuppenNacht: {fileID: 979532208}
+  minLoop: 3
+  maxLoop: 10
   playerName: ???
   dialogCSVFiles:
   - {fileID: 4900000, guid: 64db8feb61a262f4492d3566c42c2421, type: 3}
@@ -9716,9 +9920,9 @@ MonoBehaviour:
     csvFileIndex: 0
   - itemId: mirrow_face
     csvFileIndex: 0
-  - itemId: door_open
+  - itemId: door2_open
     csvFileIndex: 0
-  - itemId: window_moonlight
+  - itemId: window4_moonlight
     csvFileIndex: 0
   - itemId: koffer_random
     csvFileIndex: 0
@@ -9736,7 +9940,7 @@ MonoBehaviour:
     csvFileIndex: 0
   - itemId: koffer2_random
     csvFileIndex: 0
-  - itemId: window2_moonlight
+  - itemId: window3_moonlight
     csvFileIndex: 0
   - itemId: window2_rain
     csvFileIndex: 0
@@ -9769,12 +9973,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebugLogs: 1
   itemId: 
-  door1: {fileID: 853842820}
+  doorClosedObj: {fileID: 853842820}
   door2: {fileID: 1567700257}
   canvasUebergang: {fileID: 551320062}
+  spiegelObjekt1: {fileID: 2028270698}
+  spiegelObjekt2: {fileID: 1233919348}
+  transitionCanvas: {fileID: 551320062}
+  cupWindowActivate:
+  - {fileID: 780028741}
+  - {fileID: 1130707768}
+  - {fileID: 559118581}
+  - {fileID: 635781408}
+  cupWindowDeactivate:
+  - {fileID: 301188474}
+  - {fileID: 1369139871}
+  - {fileID: 1043403421}
   onDialogCompleted:
     m_PersistentCalls:
       m_Calls: []
+  wagonDoorScript: {fileID: 885593371}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9788,3 +10005,4 @@ SceneRoots:
   - {fileID: 1648885219}
   - {fileID: 574876105}
   - {fileID: 1043728575}
+  - {fileID: 885593372}

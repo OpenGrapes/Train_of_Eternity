@@ -36,9 +36,9 @@ public class ItemDialogTrigger : MonoBehaviour
     [Header("Item Configuration")]
     public string itemId = ""; // Für WagonDoorWithDialog Kompatibilität
     
-    [Header("Door Management System")]
-    [Tooltip("Door 1 GameObject (wird bei Loop 10 + i_am_thomasen Memory deaktiviert)")]
-    public GameObject door1;
+    [Header("Door Closed Inspector")]
+    [Tooltip("Door Closed GameObject (wird für Tür-Dialog und Wechsel verwendet)")]
+    public GameObject doorClosedObj;
     
     [Tooltip("Door 2 GameObject (wird bei Loop 10 + i_am_thomasen Memory aktiviert)")]
     public GameObject door2;
@@ -47,9 +47,22 @@ public class ItemDialogTrigger : MonoBehaviour
     [Tooltip("Canvas Übergang GameObject (wird nach Door 2 Dialog dauerhaft aktiviert)")]
     public GameObject canvasUebergang;
     
+    [Header("Spiegel Event")]
+    public GameObject spiegelObjekt1; // Wird bei Loop 10 + fixed_mirrow aktiviert
+    public GameObject spiegelObjekt2; // Wird bei Loop 10 + all_memorys_collected aktiviert
+    public GameObject transitionCanvas; // Übergangs-Canvas
+
+    [Header("Cup Window Crash")]
+    public GameObject[] cupWindowActivate;
+    public GameObject[] cupWindowDeactivate;
+
     [Header("Events")]
     public UnityEvent onDialogCompleted = new UnityEvent(); // Für WagonDoorWithDialog Kompatibilität
     
+    [Header("WagonDoor System")]
+    [Tooltip("WagonDoor Script, das beim Türwechsel aktiviert und ausgeführt werden soll")]
+    public WagonDoor wagonDoorScript;
+
     private bool dialogActive = false;
     private bool doorDialogWasActive = false;
     private bool door2DialogWasActive = false; // Flag für Door 2 Dialog
@@ -60,7 +73,11 @@ public class ItemDialogTrigger : MonoBehaviour
     private bool cacheInitialized = false; // Flag ob Cache bereits erstellt wurde
     private bool doorSystemChecked = false; // Flag um Door System nur einmal zu prüfen
     private bool canvasUebergangActivated = false; // Flag ob Canvas-Übergang bereits dauerhaft aktiviert wurde
-    
+    private bool spiegelEventTriggered = false;
+    private bool spiegelDialogDone = false;
+    private bool cupWindowCrashTriggered = false;
+    private bool doorClicked = false;
+
     // Cache für Performance - wird nur einmal beim Start erstellt
     private System.Collections.Generic.List<ItemInteractable> cachedItemInteractables = null;
     private System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<ItemInteractable>> cachedItemGroups = null;
@@ -72,6 +89,19 @@ public class ItemDialogTrigger : MonoBehaviour
         
         // Registriere für Wagon Transition Complete Events
         RegisterForWagonTransitionEvents();
+        
+        if (doorClosedObj != null)
+        {
+            var btn = doorClosedObj.GetComponent<UnityEngine.UI.Button>();
+            if (btn == null) btn = doorClosedObj.AddComponent<UnityEngine.UI.Button>();
+            btn.onClick.AddListener(OnDoor1Clicked);
+        }
+    }
+    
+    private void OnDoor1Clicked()
+    {
+        doorClicked = true;
+        if (showDebugLogs) Debug.Log("Door Closed wurde angeklickt. Wechsel-Flag gesetzt.");
     }
     
     // Registriere für WagonManager Events
@@ -433,22 +463,19 @@ public class ItemDialogTrigger : MonoBehaviour
     
     private void Update()
     {
-        // Prüfe ob Dialog aktiv ist
         bool currentlyActive = IsDialogActive();
-        
         // Dialog wurde gerade beendet
         if (dialogActive && !currentlyActive)
         {
-            // Prüfe ob es ein door_closed Dialog war
-            if (doorDialogWasActive)
+            // Wechsel nur, wenn Tür angeklickt wurde
+            if (doorClicked)
             {
                 if (showDebugLogs)
                 {
-                    Debug.Log("ItemDialogTrigger: door_closed Dialog beendet - triggere WagonDoor");
+                    Debug.Log("ItemDialogTrigger: Tür-Dialog beendet und Tür wurde angeklickt - triggere WagonDoor (ID egal)");
                 }
-                
                 TriggerWagonDoor();
-                doorDialogWasActive = false;
+                doorClicked = false;
             }
             
             // Prüfe ob es ein Door 2 Dialog war (für Canvas-Übergang und Musik)
@@ -509,6 +536,42 @@ public class ItemDialogTrigger : MonoBehaviour
             // Nur als Fallback für den ersten Start prüfen
             CheckItemEvolutionOptimizedFallback();
         }
+
+        // Spiegel Event: Erstes Objekt aktivieren
+        if (!spiegelEventTriggered && GameManager.SafeGetCurrentLoop() == 10 && GameManager.SafeHasMemory("fixed_mirrow"))
+        {
+            if (spiegelObjekt1 != null)
+            {
+                spiegelObjekt1.SetActive(true);
+                spiegelEventTriggered = true;
+                Debug.Log("SpiegelObjekt1 aktiviert (Loop 10 + fixed_mirrow)");
+            }
+        }
+
+        // Zweites Objekt aktivieren, wenn Voraussetzungen erfüllt
+        if (GameManager.SafeGetCurrentLoop() == 10 && GameManager.SafeHasMemory("all_memorys_collected"))
+        {
+            if (spiegelObjekt2 != null && !spiegelObjekt2.activeSelf)
+            {
+                spiegelObjekt2.SetActive(true);
+                Debug.Log("SpiegelObjekt2 aktiviert (Loop 10 + all_memorys_collected)");
+            }
+        }
+
+        // Cup Window Crash Event
+        if (!cupWindowCrashTriggered && GameManager.SafeGetCurrentLoop() == 8)
+        {
+            foreach (var obj in cupWindowActivate)
+            {
+                if (obj != null) obj.SetActive(true);
+            }
+            foreach (var obj in cupWindowDeactivate)
+            {
+                if (obj != null) obj.SetActive(false);
+            }
+            cupWindowCrashTriggered = true;
+            Debug.Log("Cup Window Crash Event: 3 Objekte aktiviert, 3 deaktiviert (Loop 8)");
+        }
     }
     
     // Prüfe ob ein Dialog aktiv ist
@@ -521,9 +584,30 @@ public class ItemDialogTrigger : MonoBehaviour
     // Prüfe ob es ein door_closed Dialog ist (vereinfacht)
     private bool CheckIfDoorDialog()
     {
-        // Vereinfachte Annahme: Wenn Dialog aktiv ist und door_closed verfügbar ist
-        var dialogs = GameManager.SafeGetDialogsForItem("door_closed");
-        return dialogs != null && dialogs.Count > 0;
+        // Prüfe, ob der aktuell angezeigte Dialog wirklich zu door_closed gehört
+        var dialogManager = FindFirstObjectByType<DialogManager>();
+        if (dialogManager == null)
+            return false;
+
+        // Prüfe, ob ein Dialog aktiv ist
+        if (!dialogManager.dialogPanel || !dialogManager.dialogPanel.activeInHierarchy)
+            return false;
+
+        // Prüfe, ob die aktuelle Dialog-Liste existiert und DialogIndex gültig ist
+        var currentDialog = typeof(DialogManager).GetField("currentDialog", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(dialogManager) as System.Collections.Generic.List<DialogLine>;
+        var dialogIndexField = typeof(DialogManager).GetField("dialogIndex", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        int dialogIndex = dialogIndexField != null ? (int)dialogIndexField.GetValue(dialogManager) : 0;
+
+        if (currentDialog == null || dialogIndex < 0 || dialogIndex >= currentDialog.Count)
+            return false;
+
+        // Prüfe, ob die aktuelle Dialogzeile zu door_closed gehört
+        var currentLine = currentDialog[dialogIndex];
+        // Annahme: DialogLine hat eine itemId oder memoryId, die "door_closed" entspricht
+        if (currentLine != null && currentLine.memoryId == "door_closed")
+            return true;
+
+        return false;
     }
     
     // Prüfe ob es ein Door 2 Dialog ist (basierend auf Door 2 GameObject)
@@ -634,55 +718,39 @@ public class ItemDialogTrigger : MonoBehaviour
     // Triggere WagonDoor Script
     private void TriggerWagonDoor()
     {
-        // Finde das ItemInteractable mit door_closed ID
-        var itemInteractables = FindObjectsByType<ItemInteractable>(FindObjectsSortMode.None);
-        
-        foreach (var item in itemInteractables)
-        {
-            if (item.itemId == "door_closed")
-            {
-                // Suche WagonDoor Script am selben GameObject
-                var wagonDoor = item.GetComponent<MonoBehaviour>();
-                var allComponents = item.GetComponents<MonoBehaviour>();
-                
-                foreach (var component in allComponents)
-                {
-                    if (component.GetType().Name.Contains("WagonDoor"))
-                    {
-                        if (showDebugLogs)
-                        {
-                            Debug.Log($"ItemDialogTrigger: WagonDoor Script gefunden auf GameObject '{item.name}' mit door_closed ID");
-                        }
-                        
-                        // Aktiviere das WagonDoor Script
-                        component.enabled = true;
-                        
-                        if (showDebugLogs)
-                        {
-                            Debug.Log($"ItemDialogTrigger: WagonDoor Script aktiviert, rufe OnWagonDoorClicked auf");
-                        }
-                        
-                        // Rufe OnWagonDoorClicked direkt auf
-                        CallWagonDoorMethod(component);
-                        
-                        // Deaktiviere WagonDoor Script wieder nach Ausführung
-                        StartCoroutine(DeactivateWagonDoorAfterDelay(component));
-                        return;
-                    }
-                }
-                
-                if (showDebugLogs)
-                {
-                    Debug.LogWarning($"ItemDialogTrigger: Kein WagonDoor Script auf GameObject '{item.name}' mit door_closed ID gefunden");
-                }
-                return;
-            }
-        }
-        
+        // Debug: Zeige ob Inspector-Zuweisung vorhanden ist
         if (showDebugLogs)
         {
-            Debug.LogWarning("ItemDialogTrigger: Kein ItemInteractable mit door_closed ID gefunden");
+            Debug.Log($"TriggerWagonDoor: wagonDoorScript Inspector-Zuweisung: {(wagonDoorScript != null ? "JA" : "NEIN")}");
+            Debug.Log($"TriggerWagonDoor: doorClosedObj Inspector-Zuweisung: {(doorClosedObj != null ? "JA" : "NEIN")}");
         }
+        // 1. Direktes Inspector-Feld
+        if (wagonDoorScript != null)
+        {
+            Debug.Log("TriggerWagonDoor: Aktiviere und rufe WagonDoor direkt über Inspector-Feld auf!");
+            wagonDoorScript.enabled = true;
+            wagonDoorScript.OnWagonDoorClicked();
+            StartCoroutine(DeactivateWagonDoorAfterDelaySeconds(wagonDoorScript, 3f));
+            return;
+        }
+        // 2. Fallback: Suche auf doorClosedObj
+        if (doorClosedObj != null)
+        {
+            var allComponents = doorClosedObj.GetComponents<MonoBehaviour>();
+            foreach (var component in allComponents)
+            {
+                if (component.GetType().Name == "WagonDoor")
+                {
+                    Debug.Log("TriggerWagonDoor: Aktiviere und rufe WagonDoor über doorClosedObj auf!");
+                    component.enabled = true;
+                    CallWagonDoorMethod(component);
+                    StartCoroutine(DeactivateWagonDoorAfterDelaySeconds(component, 3f));
+                    return;
+                }
+            }
+            Debug.LogWarning($"TriggerWagonDoor: Kein WagonDoor Script auf GameObject '{doorClosedObj.name}' gefunden (Inspector)");
+        }
+        Debug.LogWarning("TriggerWagonDoor: Kein WagonDoor Script gefunden! Weder Inspector noch Tür-Objekt.");
     }
     
     // Deaktiviere WagonDoor Script nach Ausführung
@@ -695,6 +763,17 @@ public class ItemDialogTrigger : MonoBehaviour
         if (showDebugLogs)
         {
             Debug.Log($"ItemDialogTrigger: WagonDoor Script wieder deaktiviert");
+        }
+    }
+    
+    // Deaktiviere WagonDoor Script nach Ausführung (mit Sekunden-Delay)
+    private System.Collections.IEnumerator DeactivateWagonDoorAfterDelaySeconds(MonoBehaviour script, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        script.enabled = false;
+        if (showDebugLogs)
+        {
+            Debug.Log($"ItemDialogTrigger: WagonDoor Script nach {seconds} Sekunden wieder deaktiviert");
         }
     }
     
@@ -784,7 +863,7 @@ public class ItemDialogTrigger : MonoBehaviour
     private void CheckDoorManagementSystem()
     {
         // Nur prüfen wenn beide Doors zugewiesen sind
-        if (door1 == null || door2 == null)
+        if (doorClosedObj == null || door2 == null)
             return;
         
         int currentLoop = GameManager.SafeGetCurrentLoop();
@@ -805,7 +884,7 @@ public class ItemDialogTrigger : MonoBehaviour
         }
         
         // Prüfe aktuellen Zustand der Doors
-        bool door1CurrentlyActive = door1.activeInHierarchy;
+        bool door1CurrentlyActive = doorClosedObj.activeInHierarchy;
         bool door2CurrentlyActive = door2.activeInHierarchy;
         
         // Korrigiere Door-Zustand falls nötig
@@ -813,12 +892,12 @@ public class ItemDialogTrigger : MonoBehaviour
         
         if (door1CurrentlyActive != shouldDoor1BeActive)
         {
-            door1.SetActive(shouldDoor1BeActive);
+            doorClosedObj.SetActive(shouldDoor1BeActive);
             needsCorrection = true;
             
             if (showDebugLogs)
             {
-                Debug.Log($"🚪 KORREKTUR Door 1: {(door1CurrentlyActive ? "aktiv" : "inaktiv")} → {(shouldDoor1BeActive ? "aktiv" : "inaktiv")}");
+                Debug.Log($"🚪 KORREKTUR Door Closed: {(door1CurrentlyActive ? "aktiv" : "inaktiv")} → {(shouldDoor1BeActive ? "aktiv" : "inaktiv")}");
             }
         }
         
@@ -843,7 +922,7 @@ public class ItemDialogTrigger : MonoBehaviour
                     : $"Loop {currentLoop} erreicht, aber Memory 'i_am_thomasen' noch nicht verfügbar";
                 
                 Debug.Log($"🚪 DOOR MANAGEMENT SYSTEM (Loop {currentLoop}): {reason}");
-                Debug.Log($"Door 1: {(shouldDoor1BeActive ? "aktiv" : "inaktiv")}, Door 2: {(shouldDoor2BeActive ? "aktiv" : "inaktiv")}");
+                Debug.Log($"Door Closed: {(shouldDoor1BeActive ? "aktiv" : "inaktiv")}, Door 2: {(shouldDoor2BeActive ? "aktiv" : "inaktiv")}");
                 
                 if (needsCorrection)
                 {
@@ -1521,14 +1600,14 @@ public class ItemDialogTrigger : MonoBehaviour
     public void DebugShowDoorManagementSystem()
     {
         Debug.Log("=== DOOR MANAGEMENT SYSTEM STATUS ===");
-        Debug.Log($"Door 1 zugewiesen: {door1 != null}");
+        Debug.Log($"Door Closed zugewiesen: {doorClosedObj != null}");
         Debug.Log($"Door 2 zugewiesen: {door2 != null}");
         Debug.Log($"Canvas Übergang zugewiesen: {canvasUebergang != null}");
         
-        if (door1 != null)
+        if (doorClosedObj != null)
         {
-            Debug.Log($"Door 1 Name: '{door1.name}'");
-            Debug.Log($"Door 1 Status: {(door1.activeInHierarchy ? "aktiv" : "inaktiv")}");
+            Debug.Log($"Door Closed Name: '{doorClosedObj.name}'");
+            Debug.Log($"Door Closed Status: {(doorClosedObj.activeInHierarchy ? "aktiv" : "inaktiv")}");
         }
         
         if (door2 != null)
@@ -1574,9 +1653,9 @@ public class ItemDialogTrigger : MonoBehaviour
     // Manuell Door Management System ausführen (für Debugging)
     public void ForceDoorManagementSystem()
     {
-        if (door1 == null || door2 == null)
+        if (doorClosedObj == null || door2 == null)
         {
-            Debug.LogWarning("ItemDialogTrigger: Kann Door Management System nicht forcieren - Door 1 oder Door 2 nicht zugewiesen!");
+            Debug.LogWarning("ItemDialogTrigger: Kann Door Management System nicht forcieren - Door Closed oder Door 2 nicht zugewiesen!");
             return;
         }
         
@@ -1585,13 +1664,13 @@ public class ItemDialogTrigger : MonoBehaviour
             Debug.Log("ItemDialogTrigger: MANUELL Door Management System forciert (Bypass-Bedingungen)");
         }
         
-        door1.SetActive(false);
+        doorClosedObj.SetActive(false);
         door2.SetActive(true);
         doorSystemChecked = true;
         
         if (showDebugLogs)
         {
-            Debug.Log($"🚪 FORCIERT: Door 1 deaktiviert, Door 2 aktiviert");
+            Debug.Log($"🚪 FORCIERT: Door Closed deaktiviert, Door 2 aktiviert");
         }
     }
     
@@ -1666,5 +1745,23 @@ public class ItemDialogTrigger : MonoBehaviour
         {
             Debug.Log($"ItemDialogTrigger: Dialog-Status zurückgesetzt für itemId '{itemId}'");
         }
+    }
+
+    // Diese Methode nach Dialog-Ende aufrufen
+    public void StartSpiegelTransition()
+    {
+        if (transitionCanvas != null)
+        {
+            StartCoroutine(SpiegelTransitionCoroutine());
+        }
+    }
+
+    private System.Collections.IEnumerator SpiegelTransitionCoroutine()
+    {
+        transitionCanvas.SetActive(true);
+        Debug.Log("Übergangs-Canvas aktiviert (Spiegel Event)");
+        yield return new WaitForSeconds(Random.Range(1f, 3f));
+        transitionCanvas.SetActive(false);
+        Debug.Log("Übergangs-Canvas deaktiviert (Spiegel Event)");
     }
 }

@@ -4,8 +4,8 @@ coffeecup_sunflower,1,,An thermos cup with yellow sunflowers on it.,coffee_hot
 ticket_empty,1,,An empty train ticket.,
 window_rain,1,,A window. It's raining outside.,
 window2_rain,1,,It's still raining outside.,
-window_moonlight,1,,"Beautiful moonlight, or is that already the sun rising in the distance? Hard to tell from here.",
-window2_moonlight,1,,"Beautiful moonlight, or is that already the sun rising in the distance? Hard to tell from here.",
+window3_moonlight,1,,"Beautiful moonlight, or is that already the sun rising in the distance? Hard to tell from here.",
+window4_moonlight,1,,"Beautiful moonlight, or is that already the sun rising in the distance? Hard to tell from here.",
 koffer_random,1,,"Just a suitcase, maybe it belongs to one of the passengers.",
 koffer2_random,1,,"Just a suitcase, maybe it belongs to one of the passengers.",
 light_off,1,,"Of course, the lamp above that creepy guy is broken.",
@@ -22,7 +22,7 @@ ticket_name,4,spilled_coffee,The ticket says: Thomasen Schmidt.,ticket_name
 window_face,6,,What was that face? Where did it come from?,window_face_reveal
 window_coffeecup,8,,Did the thermos cup just fly out the window?,window_broken
 window2_coffeecup,8,,Did the thermos cup just fly out the window?,window_broken
-loop_last,9,,Now I understand. Thomasen died in a train accident. Because he reached for the thermos cup.,
-mirrow_fixed,10,fixed_mirrow,The mirror is whole again. How is that possible?,all_memorys_collected
-mirrow_face,10,all_memorys_collected,"The strangers face in the mirror. Wait, no, it's my face. I am Thomasen Schmidt. I died because I reached for the thermos cup. I was dead. I was it the whole time. I just couldn't remember. Or maybe I didn't want to anymore.",i_am_thomasen
-door_open,10,i_am_thomasen,Now I am ready. I can let go now.,
+loop_last,10,,Now I understand. Thomasen died in a train accident. Because he reached for the thermos cup.,
+mirrow_fixed,11,fixed_mirrow,The mirror is whole again. How is that possible?,all_memorys_collected
+mirrow_face,11,all_memorys_collected,"The strangers face in the mirror. Wait, no, it's my face. I am Thomasen Schmidt. I died because I reached for the thermos cup. I was dead. I was it the whole time. I just couldn't remember. Or maybe I didn't want to anymore.",i_am_thomasen
+door2_open,11,i_am_thomasen,Now I am ready. I can let go now.,
