@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &11169934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9666,6 +9666,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLoopCount: 1
+  sternschnuppenNacht: {fileID: 0}
+  minLoop: 1
+  maxLoop: 3
   playerName: ???
   dialogCSVFiles:
   - {fileID: 4900000, guid: 6e3089ed8f99fac4f80f11a98e0aa5b9, type: 3}
@@ -9769,12 +9772,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDebugLogs: 1
   itemId: 
-  door1: {fileID: 853842820}
+  doorClosedObj: {fileID: 0}
   door2: {fileID: 1567700257}
   canvasUebergang: {fileID: 551320062}
+  spiegelObjekt1: {fileID: 0}
+  spiegelObjekt2: {fileID: 0}
+  transitionCanvas: {fileID: 0}
+  cupWindowActivate: []
+  cupWindowDeactivate: []
   onDialogCompleted:
     m_PersistentCalls:
       m_Calls: []
+  wagonDoorScript: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
