@@ -180,6 +180,15 @@ public class GameManager : MonoBehaviour
     private bool isWindow2Switching = false;
     private bool window2SystemInitialized = false;
     private bool backgroundMusicStarted = false;
+
+    // Inspector-Variablen für das Bildwechsel-Feature
+    [Header("StrangerChange")]
+    public Image targetImageObject;
+    public Sprite imageForLoop6;
+    public Sprite imageForLoop9;
+    
+    [Header("Loop 11 LoopDialog deaktivieren")]
+    public GameObject objectToDeactivateInLoop11;
     
     private void Awake()
     {
@@ -2022,6 +2031,7 @@ public class GameManager : MonoBehaviour
         
         if (showDebugLogs)
         {
+
             Debug.Log($"=== FINDE BESTEN DIALOG FÜR '{contextId}' ===");
             Debug.Log($"Aktueller Loop: {currentLoopCount}");
             Debug.Log($"Verfügbare Dialoge: {dialogs.Count}");
@@ -2163,6 +2173,19 @@ public class GameManager : MonoBehaviour
         
         Debug.Log($"Neuer Loop: {currentLoopCount}");
         Debug.Log($"Memory-Tracker für neuen Loop zurückgesetzt");
+        
+        // Füge die Loop-Image-Logik in die Loop-Wechsel-Methode ein
+        if (targetImageObject != null)
+        {
+            if (currentLoopCount == 6 && imageForLoop6 != null)
+            {
+                targetImageObject.sprite = imageForLoop6;
+            }
+            else if (currentLoopCount == 9 && imageForLoop9 != null)
+            {
+                targetImageObject.sprite = imageForLoop9;
+            }
+        }
     }
     
     // Wird vom WagonManager aufgerufen wenn ein Loop abgeschlossen wird
@@ -2500,5 +2523,14 @@ public class GameManager : MonoBehaviour
             
         // Prüfe Memory-Requirements
         return Instance.AreDialogRequirementsMet(dialog);
+    }
+
+    private void OnLoopChanged(int newLoop)
+    {
+        // Deaktiviere das zugewiesene Objekt in Loop 11
+        if (newLoop == 11 && objectToDeactivateInLoop11 != null)
+        {
+            objectToDeactivateInLoop11.SetActive(false);
+        }
     }
 }

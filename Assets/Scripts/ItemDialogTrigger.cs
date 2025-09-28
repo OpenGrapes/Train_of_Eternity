@@ -537,7 +537,7 @@ public class ItemDialogTrigger : MonoBehaviour
             CheckItemEvolutionOptimizedFallback();
         }
 
-        // Spiegel Event: Erstes Objekt aktivieren
+        // Spiegel Event: Nur erstes Objekt aktivieren
         if (!spiegelEventTriggered && GameManager.SafeGetCurrentLoop() == 10 && GameManager.SafeHasMemory("fixed_mirrow"))
         {
             if (spiegelObjekt1 != null)
@@ -545,16 +545,6 @@ public class ItemDialogTrigger : MonoBehaviour
                 spiegelObjekt1.SetActive(true);
                 spiegelEventTriggered = true;
                 Debug.Log("SpiegelObjekt1 aktiviert (Loop 10 + fixed_mirrow)");
-            }
-        }
-
-        // Zweites Objekt aktivieren, wenn Voraussetzungen erfüllt
-        if (GameManager.SafeGetCurrentLoop() == 10 && GameManager.SafeHasMemory("all_memorys_collected"))
-        {
-            if (spiegelObjekt2 != null && !spiegelObjekt2.activeSelf)
-            {
-                spiegelObjekt2.SetActive(true);
-                Debug.Log("SpiegelObjekt2 aktiviert (Loop 10 + all_memorys_collected)");
             }
         }
 

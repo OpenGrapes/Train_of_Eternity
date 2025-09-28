@@ -6053,7 +6053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: mirrow_face
+  itemId: mirrow3_face
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!1 &1351764505
@@ -6533,7 +6533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1454338847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8408,7 +8408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: loop_intro
-  dialogManager: {fileID: 0}
+  dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!65 &1865348097
 BoxCollider:
@@ -8482,7 +8482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: loop_last
-  dialogManager: {fileID: 0}
+  dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!114 &1865348101
 MonoBehaviour:
@@ -8497,7 +8497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: loop_two
-  dialogManager: {fileID: 0}
+  dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!1 &1902346311
 GameObject:
@@ -8978,7 +8978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: mirrow_fixed
+  itemId: mirrow2_fixed
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!1 &2036832769
@@ -9910,15 +9910,15 @@ MonoBehaviour:
     csvFileIndex: 0
   - itemId: ticket_name
     csvFileIndex: 0
-  - itemId: window_face
+  - itemId: window9_face
     csvFileIndex: 0
   - itemId: window_coffeecup
     csvFileIndex: 0
   - itemId: loop_last
     csvFileIndex: 0
-  - itemId: mirrow_fixed
+  - itemId: mirrow2_fixed
     csvFileIndex: 0
-  - itemId: mirrow_face
+  - itemId: mirrow3_face
     csvFileIndex: 0
   - itemId: door2_open
     csvFileIndex: 0
@@ -9959,6 +9959,10 @@ MonoBehaviour:
   autoClickItemAfterWindow2: {fileID: 192606788}
   autoClickDelay: 0.2
   showDebugLogs: 1
+  targetImageObject: {fileID: 872506461}
+  imageForLoop6: {fileID: 4885560157255488202, guid: 948d290d2d143c244958a66b034b96a9, type: 3}
+  imageForLoop9: {fileID: 1194861430865742826, guid: 310b743219970ef4c91133ae5205c104, type: 3}
+  objectToDeactivateInLoop11: {fileID: 1865348094}
 --- !u!114 &2127336744
 MonoBehaviour:
   m_ObjectHideFlags: 0
