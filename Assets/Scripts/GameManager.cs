@@ -78,6 +78,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     
+    [Header("Notebook Image Change")]
+    [Tooltip("GameObject, dessen Bild in Loop 2 gewechselt wird")]
+    public GameObject notebookImageTarget;
+    [Tooltip("Neues Sprite für das Notebook-Objekt in Loop 2")]
+    public Sprite notebookNewSprite;
+
     [Header("Game State")]
     public int currentLoopCount = 1; // Aktueller Spielloop
 
@@ -187,7 +193,8 @@ public class GameManager : MonoBehaviour
     public Sprite imageForLoop6;
     public Sprite imageForLoop9;
     
-    [Header("Loop 11 LoopDialog deaktivieren")]
+    [Header("Loop-abhängige Objekte deaktivieren")]
+    public GameObject objectToDeactivateInLoop6;
     public GameObject objectToDeactivateInLoop11;
     
     private void Awake()
@@ -2174,7 +2181,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Neuer Loop: {currentLoopCount}");
         Debug.Log($"Memory-Tracker für neuen Loop zurückgesetzt");
         
-        // Füge die Loop-Image-Logik in die Loop-Wechsel-Methode ein
+        // StrangerChange-Logik
         if (targetImageObject != null)
         {
             if (currentLoopCount == 6 && imageForLoop6 != null)
@@ -2186,6 +2193,26 @@ public class GameManager : MonoBehaviour
                 targetImageObject.sprite = imageForLoop9;
             }
         }
+
+        // Notebook Image Change: Bildwechsel in Loop 2
+        if (notebookImageTarget != null && notebookNewSprite != null && currentLoopCount == 2)
+        {
+            var imageComp = notebookImageTarget.GetComponent<UnityEngine.UI.Image>();
+            if (imageComp != null)
+            {
+                imageComp.sprite = notebookNewSprite;
+            }
+            else
+            {
+                var spriteRenderer = notebookImageTarget.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.sprite = notebookNewSprite;
+                }
+            }
+        }
+
+        OnLoopChanged(currentLoopCount);
     }
     
     // Wird vom WagonManager aufgerufen wenn ein Loop abgeschlossen wird
@@ -2473,7 +2500,7 @@ public class GameManager : MonoBehaviour
     
     public static string SafeGetPlayerName()
     {
-        return Instance != null ? Instance.GetPlayerName() : "???";
+        return Instance != null ? Instance.GetPlayerName() : "Spieler";
     }
     
     // === ERWEITERTE STATIC UTILITY-METHODEN FÜR MEMORY-SYSTEM ===
@@ -2527,6 +2554,12 @@ public class GameManager : MonoBehaviour
 
     private void OnLoopChanged(int newLoop)
     {
+        // Deaktiviere das zugewiesene Objekt in Loop 6
+        if (newLoop == 6 && objectToDeactivateInLoop6 != null)
+        {
+            objectToDeactivateInLoop6.SetActive(false);
+        }
+        
         // Deaktiviere das zugewiesene Objekt in Loop 11
         if (newLoop == 11 && objectToDeactivateInLoop11 != null)
         {

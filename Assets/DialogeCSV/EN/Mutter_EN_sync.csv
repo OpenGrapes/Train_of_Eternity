@@ -1,5 +1,4 @@
 memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
-memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
 mother_intro,1,,An old woman. She gazes thoughtfully out the window.,,,,,,,,,,,,,
 mother_crash ,2,,,,first_train_crash,"Did you notice that? Did we have a train accident?","An accident? I didn’t notice anything.",,,,,,,,,
 mother_coffee,4,,,,spilled_coffee,"In the next compartment there’s a thermos cup with a beautiful sunflower pattern. Does it happen to belong to you?","No. But I once gave one like that to someone I loved very much.",coffecup_gift,,,,,,,,

@@ -240,7 +240,7 @@ public class DialogManager : MonoBehaviour
         {
             // Keine normalen Dialog-Zeilen mehr - zeige Choices
             Debug.Log("Keine Dialog-Zeilen mehr - zeige Choices aus Warteschlange");
-            UpdateSpeakerName("???");
+            UpdateSpeakerName("Spieler");
             RefreshAndShowAvailableChoices();
             return;
         }
@@ -352,7 +352,7 @@ public class DialogManager : MonoBehaviour
             {
                 // Nach Choice-Antwort - sofort neue Choices nachrücken lassen
                 showingChoiceAnswer = false;
-                UpdateSpeakerName("???");
+                UpdateSpeakerName("Spieler");
                 
                 // KORRIGIERT: Nur einen Aufruf, nicht beide
                 UpdateChoicesInstantly();
@@ -409,7 +409,7 @@ public class DialogManager : MonoBehaviour
         {
             Debug.LogWarning($"KEINE CHOICE-ANTWORT VERFÜGBAR für Choice: '{choice.choiceText}'");
             // Keine Antwort-Text - sofort neue Warteschlange anzeigen
-            UpdateSpeakerName("???");
+            UpdateSpeakerName("Spieler");
             RefreshAndShowAvailableChoices();
         }
         
@@ -480,7 +480,7 @@ public class DialogManager : MonoBehaviour
         if (waitingQueue.Count > 0)
         {
             Debug.Log($"RefreshAndShowAvailableChoices: Zeige {waitingQueue.Count} Choices aus aktualisierter Warteschlange");
-            UpdateSpeakerName("???");
+            UpdateSpeakerName("Spieler");
             ShowChoicesFromWaitingQueue(waitingQueue);
         }
         else

@@ -538,7 +538,7 @@ public class ItemDialogTrigger : MonoBehaviour
         }
 
         // Spiegel Event: Nur erstes Objekt aktivieren
-        if (!spiegelEventTriggered && GameManager.SafeGetCurrentLoop() == 10 && GameManager.SafeHasMemory("fixed_mirrow"))
+    if (!spiegelEventTriggered && GameManager.SafeGetCurrentLoop() == 11 && GameManager.SafeHasMemory("fixed_mirrow"))
         {
             if (spiegelObjekt1 != null)
             {

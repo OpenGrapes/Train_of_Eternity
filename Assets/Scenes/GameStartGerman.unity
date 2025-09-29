@@ -1617,6 +1617,7 @@ GameObject:
   - component: {fileID: 192606791}
   - component: {fileID: 192606790}
   - component: {fileID: 192606793}
+  - component: {fileID: 192606794}
   m_Layer: 5
   m_Name: WindowFaceBackground
   m_TagString: Untagged
@@ -1717,6 +1718,62 @@ MonoBehaviour:
   itemId: window_face
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
+--- !u!114 &192606794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192606788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 192606791}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 192606793}
+        m_TargetAssemblyTypeName: ItemInteractable, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &211169665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,7 +7613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebc5641ecf13744abb89f5a0991636b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: window_face
+  itemId: window9_face
   dialogManager: {fileID: 1158999298}
   showDebugInfo: 1
 --- !u!65 &1653958120
@@ -8143,103 +8200,6 @@ MonoBehaviour:
   itemId: ticket_empty
   dialogManager: {fileID: 0}
   showDebugInfo: 1
---- !u!1 &1839837392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1839837393}
-  - component: {fileID: 1839837396}
-  - component: {fileID: 1839837395}
-  - component: {fileID: 1839837394}
-  m_Layer: 5
-  m_Name: Notizbuch_Memorys
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1839837393
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839837392}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6849127, y: 1.8380866, z: 1.4450366}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2075697216}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 422.26978, y: -448.586}
-  m_SizeDelta: {x: 110.594, y: 55.703}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &1839837394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839837392}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1839837395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839837392}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 1506957513662447105, guid: 00d75625ec07b014783eeede5623e9f1, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1839837396
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839837392}
-  m_CullTransparentMesh: 1
 --- !u!1 &1849592085
 GameObject:
   m_ObjectHideFlags: 0
@@ -8258,7 +8218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1849592086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8647,8 +8607,9 @@ GameObject:
   - component: {fileID: 1934656327}
   - component: {fileID: 1934656326}
   - component: {fileID: 1934656325}
+  - component: {fileID: 1934656328}
   m_Layer: 5
-  m_Name: Notizbuch_Leer
+  m_Name: Notizbuch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8670,7 +8631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 426.5, y: -453.6}
+  m_AnchoredPosition: {x: 423.4, y: -446.2}
   m_SizeDelta: {x: 113.628, y: 59.732}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1934656325
@@ -8732,6 +8693,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934656323}
   m_CullTransparentMesh: 1
+--- !u!114 &1934656328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934656323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359c6c5fa0f381447870c721bd60dd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcId: notebook
+  dialogManager: {fileID: 1158999298}
+  showDebugInfo: 1
 --- !u!1 &1980430342
 GameObject:
   m_ObjectHideFlags: 0
@@ -9353,7 +9329,6 @@ RectTransform:
   - {fileID: 853842821}
   - {fileID: 1567700258}
   - {fileID: 1934656324}
-  - {fileID: 1839837393}
   - {fileID: 39526993}
   - {fileID: 727544179}
   - {fileID: 979532209}
@@ -9866,11 +9841,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeaa0ae1e32f2747a92d76586903182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notebookImageTarget: {fileID: 1934656323}
+  notebookNewSprite: {fileID: 1506957513662447105, guid: 00d75625ec07b014783eeede5623e9f1, type: 3}
   currentLoopCount: 1
   sternschnuppenNacht: {fileID: 979532208}
   minLoop: 3
   maxLoop: 10
-  playerName: ???
+  playerName: Spieler
   dialogCSVFiles:
   - {fileID: 4900000, guid: 64db8feb61a262f4492d3566c42c2421, type: 3}
   - {fileID: 4900000, guid: b3024de2e3502a143b4ab1574935c627, type: 3}
@@ -9880,17 +9857,20 @@ MonoBehaviour:
   - {fileID: 4900000, guid: e6587e674df91624e92a60bcd84ec95c, type: 3}
   npcs:
   - npcId: mother
-    npcName: Old Lady
+    npcName: Alte Frau
     csvFileIndex: 1
   - npcId: conductor
-    npcName: Conductor
+    npcName: Schaffner
     csvFileIndex: 2
   - npcId: child
-    npcName: Little Child
+    npcName: Junge
     csvFileIndex: 3
   - npcId: stranger
-    npcName: Hollow Traveler
+    npcName: Gruseliger Fremder
     csvFileIndex: 4
+  - npcId: notebook
+    npcName: Notizbuch
+    csvFileIndex: 5
   items:
   - itemId: mirrow_broken
     csvFileIndex: 0
@@ -9910,7 +9890,7 @@ MonoBehaviour:
     csvFileIndex: 0
   - itemId: ticket_name
     csvFileIndex: 0
-  - itemId: window9_face
+  - itemId: window_face
     csvFileIndex: 0
   - itemId: window_coffeecup
     csvFileIndex: 0
@@ -9946,6 +9926,8 @@ MonoBehaviour:
     csvFileIndex: 0
   - itemId: window2_coffeecup
     csvFileIndex: 0
+  - itemId: window9_face
+    csvFileIndex: 0
   window2GameObject: {fileID: 192606788}
   canvasWagon3: {fileID: 90132927}
   canvasUebergang: {fileID: 551320062}
@@ -9956,12 +9938,13 @@ MonoBehaviour:
   preWindow2BackgroundMusicAudioSource: {fileID: 750679835}
   backgroundMusicAudioSource: {fileID: 352314776}
   canvasHauptmenu: {fileID: 211169665}
-  autoClickItemAfterWindow2: {fileID: 192606788}
+  autoClickItemAfterWindow2: {fileID: 1653958117}
   autoClickDelay: 0.2
   showDebugLogs: 1
   targetImageObject: {fileID: 872506461}
   imageForLoop6: {fileID: 4885560157255488202, guid: 948d290d2d143c244958a66b034b96a9, type: 3}
   imageForLoop9: {fileID: 1194861430865742826, guid: 310b743219970ef4c91133ae5205c104, type: 3}
+  objectToDeactivateInLoop6: {fileID: 643848118}
   objectToDeactivateInLoop11: {fileID: 1865348094}
 --- !u!114 &2127336744
 MonoBehaviour:

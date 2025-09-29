@@ -1,5 +1,4 @@
-memoryId,minLoop,requiredMemory,text,addMemory
-memoryId,minLoop,requiredMemory,text,addMemory
+memoryId,minLoop,requiredMemory,text,addMemory,choice1_requiredMemory,choice1,choice1_answer,choice1_addMemory,choice2_requiredMemory,choice2,choice2_answer,choice2_addMemory,choice3_requiredMemory,choice3,choice3_answer,choice3_addMemory
 notebook_1,1,,An old, tattered notebook with illegible handwriting.,
 notebook_2,1,Boy_is_alone,The boy seems to be here alone.,
 notebook_2,3,spilled_coffee,The spilled thermos cup contains coffee and alcohol.,
@@ -23,4 +22,4 @@ notebook_7,8,stranger_is_son ,"The stranger hates his life. He seems to belong t
 notebook_7,9,fatality_is_thomasen,"The fatality of the train accident is: Thomasen Schmidt.",
 notebook_7,9,thomasen_is_stranger,"The stranger is: Thomasen Schmidt.",
 notebook_7,9,stranger_weird,"Thomasen told me to look more closely at myself. What does he mean by that?",
-notebok_8,10,all_memorys_collected,"I am Thomasen Schmidt. Now it’s time to go. I’m sorry, mother, for the pain. With love, your Tommy.",
+notebok_8,11,all_memorys_collected,"I am Thomasen Schmidt. Now it’s time to go. I’m sorry, mother, for the pain. With love, your Tommy.",
