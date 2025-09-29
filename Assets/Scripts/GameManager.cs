@@ -2500,7 +2500,7 @@ public class GameManager : MonoBehaviour
     
     public static string SafeGetPlayerName()
     {
-        return Instance != null ? Instance.GetPlayerName() : "Spieler";
+        return Instance != null ? Instance.GetPlayerName() : " . . . ";
     }
     
     // === ERWEITERTE STATIC UTILITY-METHODEN FÜR MEMORY-SYSTEM ===

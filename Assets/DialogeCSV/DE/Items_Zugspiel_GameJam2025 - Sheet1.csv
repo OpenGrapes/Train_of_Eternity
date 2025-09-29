@@ -26,4 +26,4 @@ window2_coffeecup,8,,Ist der Thermobecher gerade durch das Fenster geflogen?,win
 loop_last,10,,Jetzt verstehe ich. Thomasen starb in einem Zugunglück. Weil er nach dem Thermobecher grifen hat,fixed_mirrow
 mirrow2_fixed,11,fixed_mirrow,Der Spiegel ist wieder heile. Wie ist das möglich,all_memorys_collected
 mirrow3_face,11,all_memorys_collected,"Das Gesicht des Fremnden im Spiegel. Warte nein es ist mein Gesicht. Ich bin Thomasen Schmidt. Ich starb, weil ich nach dem Thermobecher griff. Ich bin tod.. Ich war es die ganze Zeit schon.",i_am_thomasen
-door2_open,11,i_am_thomasen,Jetzt bin bereit. Endlich kann ich loslassen. ,
+door2_open,11,i_am_thomasen,Jetzt bin ich bereit. Endlich kann ich loslassen. ,

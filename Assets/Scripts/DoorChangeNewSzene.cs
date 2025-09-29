@@ -1,56 +1,66 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class DoorChangeNewSzene : MonoBehaviour
 {
-    [Header("Objekt für Szenenwechsel")]
-    public GameObject sceneChangeObject;
+    [Header("Inspector-Zuweisungen")]
+    public GameObject targetObject;
+    public Button targetButton;
+    
+    [Header("Canvas Übergang & Audio")]
+    public GameObject canvasUebergang;
+    public float muteDuration = 3f;
 
-    private Image sceneImage;
-    private Button sceneButton;
     private bool waitForSecondClick = false;
-    private float secondClickTimer = 0f;
-    private float secondClickTimeout = 3f;
 
     void Start()
     {
-        if (sceneChangeObject == null)
-            sceneChangeObject = this.gameObject;
-
-        sceneImage = sceneChangeObject.GetComponent<Image>();
-        if (sceneImage != null)
-        {
-            sceneImage.raycastTarget = true;
-        }
-
-        // Button-Komponente automatisch hinzufügen, falls nicht vorhanden
-        sceneButton = sceneChangeObject.GetComponent<Button>();
-        if (sceneButton == null)
-        {
-            sceneButton = sceneChangeObject.AddComponent<Button>();
-        }
-
-        // Entferne alle Listener und füge eigenen Listener hinzu
-        if (sceneButton != null)
-        {
-            sceneButton.onClick.AddListener(StartSecondClickWait);
-        }
+        // Setup wird über Inspector-Zuweisungen gehandhabt
+        // Kein automatisches Setup mehr nötig
     }
 
     void Update()
     {
         if (waitForSecondClick)
         {
-            secondClickTimer += Time.deltaTime;
             if (Input.GetMouseButtonDown(0))
             {
-                // Szenenwechsel zu 'Haupmenue'
-                UnityEngine.SceneManagement.SceneManager.LoadScene("Haupmenue");
                 waitForSecondClick = false;
+                StartCoroutine(HandleSceneTransition());
             }
-            if (secondClickTimer >= secondClickTimeout)
+        }
+    }
+    
+    private System.Collections.IEnumerator HandleSceneTransition()
+    {
+        // 1. Canvas Übergang aktivieren
+        if (canvasUebergang != null)
+        {
+            canvasUebergang.SetActive(true);
+        }
+        
+        // 2. Alle Musik muten
+        MuteAllMusic();
+        
+        // 3. Warten für die angegebene Dauer
+        yield return new WaitForSeconds(muteDuration);
+        
+        // 4. Szenenwechsel zu 'Haupmenue'
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Haupmenue");
+    }
+    
+    private void MuteAllMusic()
+    {
+        // Finde alle AudioSources in der Szene und mute sie
+        AudioSource[] allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        
+        foreach (AudioSource audioSource in allAudioSources)
+        {
+            if (audioSource != null && audioSource.isPlaying)
             {
-                waitForSecondClick = false;
+                // Mute alle Audio Sources (besonders die mit Loop = true für Musik)
+                audioSource.mute = true;
             }
         }
     }
@@ -59,6 +69,5 @@ public class DoorChangeNewSzene : MonoBehaviour
     public void StartSecondClickWait()
     {
         waitForSecondClick = true;
-        secondClickTimer = 0f;
     }
 }

@@ -7,6 +7,8 @@ public class SpiegelScript : MonoBehaviour
     public Button myButton;
     // Ziehe das zu aktivierende Objekt im Inspector hier rein
     public GameObject targetObject;
+    [Tooltip("Optional: Button dessen onClick Event nach dem Aktivieren ausgelöst werden soll")]
+    public Button targetButton;
 
     private bool waitForMouseClick = false;
 
@@ -36,11 +38,11 @@ public class SpiegelScript : MonoBehaviour
             if (targetObject != null)
             {
                 targetObject.SetActive(true);
-                // Suche explizit nach ItemInteractable und rufe OnInteract auf
-                var interactable = targetObject.GetComponent<ItemInteractable>();
-                if (interactable != null)
+                // Button-Event auslösen (Inspector-Referenz bevorzugt, sonst direkt vom Zielobjekt)
+                var buttonToInvoke = targetButton != null ? targetButton : targetObject.GetComponent<Button>();
+                if (buttonToInvoke != null)
                 {
-                    interactable.OnInteract();
+                    buttonToInvoke.onClick?.Invoke();
                 }
             }
             waitForMouseClick = false;

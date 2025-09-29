@@ -478,15 +478,14 @@ public class ItemDialogTrigger : MonoBehaviour
                 doorClicked = false;
             }
             
-            // Prüfe ob es ein Door 2 Dialog war (für Canvas-Übergang und Musik)
+            // Prüfe ob es ein Door 2 Dialog war
             if (door2DialogWasActive)
             {
                 if (showDebugLogs)
                 {
-                    Debug.Log($"ItemDialogTrigger: Door 2 Dialog '{activeDoorDialogId}' beendet - aktiviere Canvas-Übergang und stoppe Musik");
+                    Debug.Log($"ItemDialogTrigger: Door 2 Dialog '{activeDoorDialogId}' beendet");
                 }
                 
-                HandleDoor2DialogCompleted();
                 door2DialogWasActive = false;
                 activeDoorDialogId = "";
             }
@@ -623,87 +622,7 @@ public class ItemDialogTrigger : MonoBehaviour
         return false;
     }
     
-    // Behandle Door 2 Dialog-Abschluss: Canvas-Übergang + Musik stoppen
-    private void HandleDoor2DialogCompleted()
-    {
-        if (showDebugLogs)
-        {
-            Debug.Log($"🚪 DOOR 2 DIALOG ABGESCHLOSSEN: Aktiviere Canvas-Übergang dauerhaft und stoppe Musik");
-        }
-        
-        // 1. Canvas-Übergang dauerhaft aktivieren (über Inspector zugewiesenes GameObject)
-        if (canvasUebergang != null && !canvasUebergangActivated)
-        {
-            canvasUebergang.SetActive(true);
-            canvasUebergangActivated = true; // Markiere als dauerhaft aktiviert
-            
-            if (showDebugLogs)
-            {
-                Debug.Log($"✅ CANVAS-ÜBERGANG DAUERHAFT AKTIVIERT: {canvasUebergang.name}");
-            }
-        }
-        else if (canvasUebergang == null)
-        {
-            if (showDebugLogs)
-            {
-                Debug.LogWarning("Canvas-Übergang nicht im Inspector zugewiesen - kann nicht aktiviert werden");
-            }
-        }
-        else if (canvasUebergangActivated)
-        {
-            if (showDebugLogs)
-            {
-                Debug.Log("Canvas-Übergang bereits dauerhaft aktiviert");
-            }
-        }
-        
-        // 2. Musik stoppen über GameManager
-        if (GameManager.Instance != null)
-        {
-            // Stoppe alle Musik-AudioSources
-            StopAllMusicFromGameManager();
-        }
-        else
-        {
-            if (showDebugLogs)
-            {
-                Debug.LogWarning("GameManager nicht gefunden - kann Musik nicht stoppen");
-            }
-        }
-    }
-    
-    // Stoppe alle Musik-AudioSources im GameManager
-    private void StopAllMusicFromGameManager()
-    {
-        var gameManager = GameManager.Instance;
-        
-        // Verwende Reflection um auf private AudioSources zuzugreifen
-        var gameManagerType = gameManager.GetType();
-        
-        // Suche nach AudioSource-Feldern für Musik
-        var fields = gameManagerType.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-        
-        foreach (var field in fields)
-        {
-            if (field.FieldType == typeof(AudioSource))
-            {
-                var audioSource = field.GetValue(gameManager) as AudioSource;
-                if (audioSource != null && audioSource.isPlaying)
-                {
-                    // Stoppe nur Musik-AudioSources (erkennbar am Namen oder am Loop-Flag)
-                    if (field.Name.ToLower().Contains("music") || field.Name.ToLower().Contains("background") || audioSource.loop)
-                    {
-                        audioSource.Stop();
-                        
-                        if (showDebugLogs)
-                        {
-                            Debug.Log($"🎵 MUSIK GESTOPPT: {field.Name} (AudioClip: {(audioSource.clip != null ? audioSource.clip.name : "null")})");
-                        }
-                    }
-                }
-            }
-        }
-    }
+
     
     // Triggere WagonDoor Script
     private void TriggerWagonDoor()
@@ -859,7 +778,7 @@ public class ItemDialogTrigger : MonoBehaviour
         int currentLoop = GameManager.SafeGetCurrentLoop();
         
         // OPTIMIERUNG: Erst ab Loop 10 prüfen - davor ist es sinnlos
-        if (currentLoop < 10)
+        if (currentLoop < 11)
             return;
         
         // Ab Loop 10: Jeden Frame prüfen ob Door-Zustand korrekt ist
@@ -867,7 +786,7 @@ public class ItemDialogTrigger : MonoBehaviour
         bool shouldDoor2BeActive = false;
         
         // Prüfe ob Loop Count 10 erreicht wurde UND i_am_thomasen Memory vorhanden ist
-        if (currentLoop >= 10 && GameManager.SafeHasMemory("i_am_thomasen"))
+        if (currentLoop >= 11 && GameManager.SafeHasMemory("i_am_thomasen"))
         {
             shouldDoor1BeActive = false;
             shouldDoor2BeActive = true;
