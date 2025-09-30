@@ -25,7 +25,7 @@ public class SpiegelScript : MonoBehaviour
         }
     }
 
-    void OnSpiegelButtonClicked()
+    public void OnSpiegelButtonClicked()
     {
         waitForMouseClick = true;
     }
